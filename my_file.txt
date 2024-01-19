@@ -1,0 +1,48 @@
+Last login: Fri Jan 19 14:59:39 on ttys000
+melanieballard@Melanies-MacBook-Pro ~ % cd CISC3500
+cd: no such file or directory: CISC3500
+melanieballard@Melanies-MacBook-Pro ~ % cd CISC3300
+melanieballard@Melanies-MacBook-Pro CISC3300 % cd CISC3300
+melanieballard@Melanies-MacBook-Pro CISC3300 % git add my_file.txt
+fatal: pathspec 'my_file.txt' did not match any files
+melanieballard@Melanies-MacBook-Pro CISC3300 % vi my_file.txt
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+a new text file
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+-- INSERT --
