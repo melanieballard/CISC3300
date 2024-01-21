@@ -1,0 +1,20 @@
+Homework 1
+Melanie Ballard
+1/21/2024
+
+1. What happens from the time a user puts a URL into their browser to when they are able
+to view a webpage? - Briefly define ISP, URL, DNS, web server.
+
+
+2. What is html? What does it do?
+
+
+3. Access https://www.fordham.edu/. In your own words, describe how this webpage uses
+structure to convey meaning and navigation options to the user.
+
+
+4. What is an html element? Tag? Attribute?
+
+
+5. Create a simple html page with some information about yourself! examples: your major,
+career goals, pets, etc.
