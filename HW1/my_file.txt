@@ -1,48 +1,6 @@
-Last login: Fri Jan 19 14:59:39 on ttys000
-melanieballard@Melanies-MacBook-Pro ~ % cd CISC3500
-cd: no such file or directory: CISC3500
-melanieballard@Melanies-MacBook-Pro ~ % cd CISC3300
-melanieballard@Melanies-MacBook-Pro CISC3300 % cd CISC3300
-melanieballard@Melanies-MacBook-Pro CISC3300 % git add my_file.txt
-fatal: pathspec 'my_file.txt' did not match any files
-melanieballard@Melanies-MacBook-Pro CISC3300 % vi my_file.txt
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-a new text file
-~                                                                               
-~                                                                               
-~                                                                               
-~                                                                               
-~                                                                               
-~                                                                               
-~                                                                               
-~                                                                               
-~                                                                               
-~                                                                               
-~                                                                               
-~                                                                               
-~                                                                               
-~                                                                               
-~                                                                               
-~                                                                               
-~                                                                               
-~                                                                               
-~                                                                               
-~                                                                               
-~                                                                               
-~                                                                               
--- INSERT --
+1. What happens from the time a user puts a URL into their browser to when they are able
+to view a webpage? - Briefly define ISP, URL, DNS, web server.
+2. What is html? What does it do?
+3. Access https://www.fordham.edu/. In your own words, describe how this webpage uses
+structure to convey meaning and navigation options to the user.
+4. What is an html element? Tag? Attribute?
