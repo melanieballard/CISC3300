@@ -14,6 +14,7 @@
         <table>
             <thead>  
                 <tr>
+                    <td></td>
                     <th scope="col">Book</th>
                     <th scope="col">Quantity</th>
                     <th scope="col">Price</th>
@@ -21,19 +22,28 @@
             </thead>
             <tbody>
                 <tr>
-                  <td>The Berry Pickers</td>
+                    <td></td>
+                    <td>The Berry Pickers</td>
                     <td>1</td>
-                    <td>$25.00</td>  
+                    <td>$25.00</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Demons</td>
+                    <td>2</td>
+                    <td>$20.00</td>  
                 </tr>
             </tbody>
             <tfoot>
-                <tr>
-
+                <th scope="row">Total</th>
+                <td></td>
+                <td>3</td>
+                <td>$45.00</td>
                 </tr> 
             </tfoot>
          
         </table>
-        <br/>
+    <br/>
         <form action ="http://www.bestbookstore.com/reviews.php" method="get">
             <fieldset>
                 <legend>Feedback Form</legend>
@@ -41,11 +51,9 @@
                 <textarea name = "feedback" cols="100" rows="4">Leave some feedback...</textarea>
             </fieldset>
         </form>
-        <br/>
-
+    <br/>
         <form action = "HW2_HTML.html">
             <button type="submit">Return To Main Page</button>
         </form>
     </body>
-
 </html>
