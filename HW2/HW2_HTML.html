@@ -4,37 +4,71 @@
         <title>Best Books</title>
     </head>
     <body>
-        <h1>Best Books Bookstore</h1>
+        <h1 id="TopOfPage">Best Books Bookstore</h1>
+        <h3>About Us</h3>
+        <p>Best Books Bookstore is an online shop designed to provide avid readers with a singular source to purchase
+            the latest novels, non-fiction biographies and educational tools, and reprints of some of history's best
+            literary accomplishments! We aim to not only be a simple commerce platform, but to become a resource for
+            reccomendations for those who are not sure what book to read next. Happy shopping!
+        </p>
         <div id="GenreList">
             <h3> Genres </h3>
+            <ul>
+                <li><a href="#Bio">Biography</a></li>
+                <li><a href="#Contemp">Contemporary Fiction</a></li>
+                <li><a href="#Classic">Classic Literature</a></li>
+            </ul>
             <dl>
-                <dt>Biography</dt>
+                <dt id="Bio">Biography</dt>
                 <br>
-                <dd><span><img src="images/JimMorrison.jpg"
+                <dd><img height = 300
+                    width = 200
+                    src="images/JimMorrison.jpg"
                     alt="Jim Morrison's Biography"
                     title = "No One Here Gets Out Alive" />
-                    <i>No One Here Gets Out Alive</i> By Danny Sugerman and Jerry Hopkins</span>
+                    <br>
+                    <em>No One Here Gets Out Alive</em>
+                    <br>By Danny Sugerman and Jerry Hopkins<br>
+                    <strong>$16.00</strong>
                 </dd>
                 <hr>
-                <dt>Contemporary Fiction</dt>
+                <dt id="Contemp">Contemporary Fiction</dt>
                 <br>
-                <dd><img src="images/BerryPickers.jpeg"
+                <dd><img height = 300 
+                    width = 200 
+                    src="images/BerryPickers.jpeg"
                     alt="The Berry Pickers"
                     title = "The Berry Pickers" />
-                    <span><i>The Berry Pickers</i> By Amanda Peters</span>
+                    <br>
+                    <em>The Berry Pickers</em>
+                    <br>
+                    By Amanda Peters
+                    <br>
+                    <strong>$25.00</strong>
                 </dd>
                 <hr>
-                <dt>Classic Literature</dt>
+                <dt id="Classic">Classic Literature</dt>
                 <br>
-                <dd><img src="images/Demons.jpeg"
+                <dd><img height = 300
+                    width = 200
+                    src="images/Demons.jpeg"
                     alt="Demons"
                     title = "Demons" />
-                    <span><i>Demons</i> By Fyodor Dostoevsky</span>
+                    <br>
+                    <em>Demons</em>
+                    <br>
+                    By Fyodor Dostoevsky 
+                    <br>
+                    <strong>$10.00</strong>
                 </dd>
                 <hr>
             </dl>
         </div>
-        <form action = "checkout.html">
+        <form action = "#TopOfPage" method="get">
+            <button type = "submit">Return to Top</button>
+        </form>
+        <br>
+        <form action = "checkout.html" method="get">
             <button type="submit">Checkout</button>
         </form>
     </body>
