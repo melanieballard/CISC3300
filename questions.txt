@@ -1,0 +1,21 @@
+1. Define structural vs semantic meaning in regard to HTML elements.
+    Structural meaning changes the appearance of an element, while semantic meaning changes
+    both the appearance and the meaning of the element. For example, <b> just makes text
+    bold, while <strong> gives it both bold typeface and semantic importance.
+
+2. Why is it important to use correct html elements when designing web pages?
+    Different elements can be treated differently by browsers and screen readers. <em> and <i>
+    might be read differently by screen readers, so using the correct tag is important for
+    accessability. Following general conventions is always another good reason to use
+    correct tags so that other developers can understand your code.
+
+3. What are forms in html? What is their purpose? When would you use one?
+    Forms are submission elements where users can input data and it can be sent to 
+    another server to be saved or proccessed. Their purpose is to allow user input on websites.
+    One reason to use a form would be for a username and password log in. Another reason could be for
+    feedback or survey purposes.
+
+
+4. Define and contrast inline vs block elements.
+    Inline elements start on the previous line and do not create a line break. Block 
+    elements always start on a new line when they are created. 
