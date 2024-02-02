@@ -4,15 +4,22 @@
             <div class = "majors-container">
                 <div class = "majors-content-container">
                     <p>Majors and Minors</p>
+                    <div class = "majors-link-box">
+                        <p>What's Your Passion?</p>
+                        <p>Accelerated Degree Programs</p>
+                    </div>
+                    <div class = "majors-and-minors-box">
+                        <p>Majors and Minors</p>
+                    </div>
                 </div>
             </div>
             <div class = "compsci-container">
                 <div class = "compsci-content-container">
                     <div class = "nav">
-                        Home
-                        Admissions and Aid
-                        Undergraduate Admissions
-                        Majors and Minors
+                        Home / 
+                        Admissions and Aid / 
+                        Undergraduate Admissions / 
+                        Majors and Minors / 
                         Computer Science
                     </div>
                     <h1>Computer Science</h1>
@@ -25,10 +32,13 @@
 
             body{
                 height: 100vh;
+                font-family: "Raleway", sans-serif;
             }
 
             .parent-container {
                 display: flex;
+                flex-direction: row;
+                align-content: space-between;
                 max-width: 1200px;
                 margin: 0 auto;
                 height: 100%;
@@ -37,13 +47,37 @@
             .compsci-container {
                 width: 900px;
             }
+
             .majors-container{
                 width: 300px;
-                border-right: 1px solid #7b0e0e;
+                border-right: 1px solid #cabebe;
+                display: flex;
+                flex-direction: column;
+                column-gap: 30px;
             }
 
             .majors-content-container{
-                padding: 0 50px;
+                padding: 20px 50px;
+                color:rgb(128, 29, 40);
+                font-weight: bold;    
+            }
+
+            .majors-link-box{
+                font-size: 12px;
+                font-weight: bold;
+                color: rgb(109, 109, 109);
+                background-color: rgb(230, 230, 230);
+                border-left:1px solid rgb(128, 29, 40);
+                padding: 3px;
+            }
+
+            .majors-and-minors-box{
+                font-size: 12px;
+                font-weight: bold;
+                text-align: center;
+                color: white;
+                background-color: rgb(128, 29, 40);
+                padding: 3px;
             }
 
             .compsci-content-container{
@@ -52,6 +86,18 @@
 
             .compsci-container .compsci-content-container h1{
                 margin: 0;
+                padding-top: 50px;
+                font-size: 48px;
+                color:rgb(128, 29, 40);
+                font-weight: lighter;
+            }
+
+            .nav{
+                padding-top: 20px;
+                font-weight: light;
+                font-size: 16px;
+                color:rgb(112, 112, 112);
+
             }
 
         </style>
