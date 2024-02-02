@@ -16,13 +16,18 @@
             <div class = "compsci-container">
                 <div class = "compsci-content-container">
                     <div class = "nav">
-                        Home / 
-                        Admissions and Aid / 
-                        Undergraduate Admissions / 
-                        Majors and Minors / 
+                        Home<span>  /  </span>
+                        Admissions and Aid<span>  /  </span>
+                        Undergraduate Admissions<span>  /  </span> 
+                        Majors and Minors<span>  /  </span>
                         Computer Science
                     </div>
                     <h1>Computer Science</h1>
+                    <div class="compsci-header-content">
+                        <p>Degree Options: Major, Minor</p>
+                        <p>Locations: Lincoln Center, Rose Hill</p>
+                        <p>Visit the <a href = "https://www.fordham.edu/academics/departments/computer-and-information-science/">Computer and Information Science Department</a></p>
+                    </div>
                 </div>
             </div>
 
@@ -38,7 +43,6 @@
             .parent-container {
                 display: flex;
                 flex-direction: row;
-                align-content: space-between;
                 max-width: 1200px;
                 margin: 0 auto;
                 height: 100%;
@@ -50,10 +54,11 @@
 
             .majors-container{
                 width: 300px;
-                border-right: 1px solid #cabebe;
+                border-right: 1px solid rgb(188, 188, 188);
                 display: flex;
                 flex-direction: column;
                 column-gap: 30px;
+                align-content: space-between;
             }
 
             .majors-content-container{
@@ -63,12 +68,19 @@
             }
 
             .majors-link-box{
-                font-size: 12px;
+                font-size: 10px;
                 font-weight: bold;
                 color: rgb(109, 109, 109);
                 background-color: rgb(230, 230, 230);
                 border-left:1px solid rgb(128, 29, 40);
                 padding: 3px;
+                margin: 20px 0;
+            }
+
+            .majors-link-box p:hover{
+                text-decoration: underline;
+                text-decoration-color: rgb(97, 96, 96);
+                color: rgb(134, 134, 134);
             }
 
             .majors-and-minors-box{
@@ -78,6 +90,11 @@
                 color: white;
                 background-color: rgb(128, 29, 40);
                 padding: 3px;
+                margin: 20px 0;
+            }
+
+            .majors-and-minors-box:hover{
+                background-color: rgb(158, 31, 53);
             }
 
             .compsci-content-container{
@@ -96,8 +113,27 @@
                 padding-top: 20px;
                 font-weight: light;
                 font-size: 16px;
-                color:rgb(112, 112, 112);
+                color:rgb(84, 82, 82);
 
+            }
+
+            .compsci-container .compsci-content-container .nav span{
+                color:rgb(188, 188, 188);
+            }
+
+            .compsci-header-content{
+                font-weight: lighter;
+                font-size: 16px;
+                line-height: 8px;
+            }
+
+            .compsci-header-content a {
+                color:rgb(128, 29, 40);
+                text-decoration-color: rgb(206, 163, 170);
+            }
+
+            .compsci-header-content a:hover{
+                text-decoration-color: rgb(128, 29, 40);
             }
 
         </style>
