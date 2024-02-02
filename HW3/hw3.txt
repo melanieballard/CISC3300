@@ -1,14 +1,22 @@
 3. Compare and contrast margin, padding, and border.
-	Margin is the space outside the box border between other elements. Padding is the space between the box border and its inside elements. The border is the actual line border around the box. If elements are too long to fit within the box's border, there are two options: you could cut off the extra information or add a scroll bar to the box. 
+
+	Margin is the space outside the box border between other elements. 
+	Padding is the space between the box border and its inside elements. 
+	The border is the actual line border around the box. If elements are too long to fit within the box's border,
+	there are two options: you could cut off the extra information or add a scroll bar to the box. 
 
 4. Define the following flexbox CSS rules
-a. display: flex
-This defines a flex container, which allows its child elements and containers to follow flex properties
-b. Flex-direction
-This sets the primary direction/axis of the flex container, which sets where items should be placed.
-c. flex-wrap
-This sets if elements should be able to wrap to a new line or not (default is all elements placed on the same line)
-d. justify-content/align-items
-Justify-content defines the mode of alignment of flex items on the flex axis. Align-items defines the mode of alignment of flex items on the cross-axis. 
-e. Align-content
-This aligns the flex container itself when there is extra space on the cross-axis. 
+
+	a. display: flex
+		This defines a flex container, which allows its child elements and containers to follow flex properties
+	b. Flex-direction
+		This sets the primary direction/axis of the flex container, which sets where items should be placed.
+	c. flex-wrap
+		This sets if elements should be able to wrap to a new line or not (default is all elements placed on 
+		the same line)
+	d. justify-content/align-items
+		Justify-content defines the mode of alignment of flex items on the flex axis. Align-items defines
+		the mode of alignment of flex items on the cross-axis. 
+	e. Align-content
+		This aligns the flex container itself when there is extra space on the cross-axis. 
+		
