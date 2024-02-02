@@ -1,6 +1,9 @@
 <html>
+    <head>
+        <title>Computer Science | Fordham</title>
+    </head>
     <body>
-        <div class="parent-container">
+        <div class = "parent-container">
             <div class = "majors-container">
                 <div class = "majors-content-container">
                     <p>Majors and Minors</p>
@@ -16,17 +19,23 @@
             <div class = "compsci-container">
                 <div class = "compsci-content-container">
                     <div class = "nav">
-                        Home<span>  /  </span>
-                        Admissions and Aid<span>  /  </span>
-                        Undergraduate Admissions<span>  /  </span> 
-                        Majors and Minors<span>  /  </span>
-                        Computer Science
+                        <span class = "link">Home</span><span class = "divider">  /  </span>
+                        <span class = "link">Admissions and Aid</span><span class = "divider">  /  </span>
+                        <span class = "link">Undergraduate Admissions</span><span class = "divider">  /  </span> 
+                        <span class = "link">Majors and Minors</span><span class = "divider">  /  </span>
+                        <span class = "link" id = "selected">Computer Science</span>
                     </div>
                     <h1>Computer Science</h1>
-                    <div class="compsci-header-content">
+                    <div class = "compsci-header-content">
                         <p>Degree Options: Major, Minor</p>
                         <p>Locations: Lincoln Center, Rose Hill</p>
                         <p>Visit the <a href = "https://www.fordham.edu/academics/departments/computer-and-information-science/">Computer and Information Science Department</a></p>
+                    </div>
+                    <div class = "compsci-main-content">
+                        <p>Wherever there’s a computer, there’s a skilled person developing, maintaining, hacking, advancing or simply using it. Be that person.</p>
+                        <p>It’s difficult to imagine life without computers when they’re so central to our information-driven global society. But it’s not difficult to imagine the amazing pursuits you’ll be prepared for with a degree in computer science from Fordham’s department of Computer and Information Sciences.</p>
+                        <p>The computer science major emphasizes science and technology, including software design and programming, computer architecture and functions, and the development of an ability to analyze and solve problems in using the computer as a tool.</p>
+                        <p>Get inspired by the classes we offer. Programming. Bioinformatics. Robotics. Video game design. Cyber security. Networking. Database management. Health and medical informatics.</p>
                     </div>
                 </div>
             </div>
@@ -42,10 +51,10 @@
 
             .parent-container {
                 display: flex;
-                flex-direction: row;
-                max-width: 1200px;
+                flex-flow: row nowrap;
+                justify-content: center;
+                max-width: 1700px;
                 max-height: 3000px;
-                margin: 0 auto;
                 height: 100%;
             }
 
@@ -54,24 +63,28 @@
             }
 
             .majors-container{
-                width: 300px;
+                width: 350px;
                 border-right: 1px solid rgb(232, 235, 231);
             }
 
             .majors-content-container{
+                font-weight: bold;
                 padding: 20px 50px;
                 color:rgb(128, 29, 40);
-                font-weight: bold;    
             }
 
             .majors-link-box{
-                font-size: 10px;
-                font-weight: bold;
+                font-size: 14px;
+                font-weight: lighter;
                 color: rgb(109, 109, 109);
                 background-color: rgb(230, 230, 230);
                 border-left:1px solid rgb(128, 29, 40);
                 padding: 3px;
                 margin: 20px 0;
+            }
+
+            .majors-link-box p{
+                padding-left: 5px;
             }
 
             .majors-link-box p:hover{
@@ -81,8 +94,7 @@
             }
 
             .majors-and-minors-box{
-                font-size: 12px;
-                font-weight: bold;
+                font-size: 16px;
                 text-align: center;
                 color: white;
                 background-color: rgb(128, 29, 40);
@@ -96,11 +108,14 @@
 
             .compsci-content-container{
                 padding: 0 50px;
+                font-weight: lighter;
+                font-size:16px;
+                color: rgb(51, 51, 51);
             }
 
             .compsci-container .compsci-content-container h1{
                 margin: 0;
-                padding-top: 50px;
+                padding-top: 30px;
                 font-size: 48px;
                 color:rgb(128, 29, 40);
                 font-weight: lighter;
@@ -111,15 +126,22 @@
                 font-weight: light;
                 font-size: 16px;
                 color:rgb(84, 82, 82);
-
             }
 
-            .compsci-container .compsci-content-container .nav span{
+            .compsci-container .compsci-content-container .nav .link:hover{
+                text-decoration: underline;
+            }
+
+            .compsci-container .compsci-content-container .nav #selected {
+                color:rgb(128, 29, 40);
+            }
+
+            .compsci-container .compsci-content-container .nav .divider{
                 color:rgb(188, 188, 188);
             }
 
             .compsci-header-content{
-                font-weight: lighter;
+                padding-top: 30px;
                 font-size: 16px;
                 line-height: 8px;
             }
@@ -131,6 +153,14 @@
 
             .compsci-header-content a:hover{
                 text-decoration-color: rgb(128, 29, 40);
+            }
+
+            .compsci-container .compsci-content-container .compsci-main-content p:first-of-type{
+                font-size: 20px;
+            }
+
+            .compsci-container .compsci-content-container .compsci-main-content p{
+                padding: 5px 0;
             }
 
         </style>
