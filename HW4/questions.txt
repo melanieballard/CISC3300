@@ -1,0 +1,22 @@
+1. What is javascript? How does an interpreted programming language differ from a
+compiled language?
+
+JavaScript is a language used commonly on websites to add functionality to certain elements or 
+store data. javascript, as an interpreted language, does not use a compiler to be read and 
+executed by the direct system, but is rather read and interpreted by the window (ex. the browser
+window on the website).
+
+2. What is the difference between var, let, and const when declaring variables?
+
+Var is a variable of any type, with a global scope and can be redeclared. Let can also be
+of any type and redeclared, but has a local scope. Const has a global scope but cannot
+be redeclared and therefore takes up less memory. 
+
+3. What are anonymous functions? Higher order functions?
+
+Anonymous functions do not have names. Higher order functions
+
+4. Define objects in JavaScript and how they are different from objects in more traditional
+OOP languages.
+
+Objects in JavaScript are 
