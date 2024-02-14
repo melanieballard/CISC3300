@@ -8,9 +8,14 @@ window on the website).
 
 2. What is the difference between var, let, and const when declaring variables?
 
-Var is a variable of any type, with a global scope and can be redeclared. Let can also be
-of any type and redeclared, but has a local scope. Const has a global scope but cannot
-be redeclared and therefore takes up less memory. 
+Var is the old-school way to declare a variable of any type that can be redeclared and updated.
+It has a global scope when it is declared outside a function and a local scope when declared
+within a function. Let can also be of any type and is block-scoped, meaning it is only accessible within
+its block. It can also be updated (within its block), but not redeclared, unlike var. Let variables can be 
+redeclared in different scopes (as they are now different variables). Const also has a block scope but cannot
+be redeclared or updated and therefore takes up less memory, but these variables must be initialized as their
+values cannot change. Let and const are both not initialized automatically, where var is initialized with an 
+undefined value if unspecified. 
 
 3. What are anonymous functions? Higher order functions?
 
