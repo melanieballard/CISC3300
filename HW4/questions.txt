@@ -14,7 +14,9 @@ be redeclared and therefore takes up less memory.
 
 3. What are anonymous functions? Higher order functions?
 
-Anonymous functions do not have names. Higher order functions
+A higher order function is a function that takes another function as an input or returns
+another function as a result. Anonymous functions do not have names and are often used as a means 
+for higher order functions (as the input or output)
 
 4. Define objects in JavaScript and how they are different from objects in more traditional
 OOP languages.
