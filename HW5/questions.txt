@@ -1,0 +1,18 @@
+4. What is the DOM? What is meant by the DOM tree?
+
+DOM stands for Document Object Model and it represents the structure of a 
+document (like an HTML file that represents a webpage) in memory. The representation
+is formatted as a logical tree, with branches that end in nodes which contain objects, or HTML 
+elements. The DOM allows programming languages like JavaScript to access elements of the tree and 
+alter them or perform functions on them. 
+
+5. What is a XSS attack? How do they work? How can you guard against them?
+
+An XSS is a Cross-site scripting attack, which is when an attacker submits malicious code into a website 
+form that takes script inputs. They work by manipulating otherwise reputable websites to access users
+private data through the interactions they have with that website. The attacker can submit malicious code to a 
+website that uses JavaScript to read user input and alter parts of the website based on that input. If a hacker
+submits code that could reroute credit card number inputs to a secondary source rather than just the secure 
+original website, this would be considered and XSS attack. Some ways to prevent XSS attacks are to screen any 
+user inputs before they are executed to ensure they are valid. Another way to prevent them is to encode any user 
+inputted data in a way where it would be unusable to any hacker who aquires it.
