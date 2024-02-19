@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Question Six</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <button id = "button">Button</button>
+    <ul>
+        <li>Item One</li>
+        <li>Item Two</li>
+        <li>Item Three</li>
+    </ul>
+    <div id = "partThree">
+        <button id = "secondButton">Button2</button>
+    </div>
+    <script>
+        $("#button").click(function(){
+            $(this).text("Clicked"); 
+        });
+        $("li").click(function(){
+            $("ul li").css("color", "blue");
+        });
+        $("#secondButton").click(function(){
+            $(this).after("<p>Some Appended Text</p>"); 
+        });
+    </script>
+</body>
+</html>
+
+
