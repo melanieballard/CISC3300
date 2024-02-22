@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    </head>
+    <body>
+        <button id = "get">Get</button>
+        <form id = "form">
+            <label>Post Comment</label>
+            <input type = "text" id = "comment-input">
+            <label>postID</label>
+            <input type = "text" id = "postID-input">
+            <input type="submit" value="submit">
+        </form>
+        <form id = "form-2">
+            <label>Put Comment</label>
+            <input type = "text" id = "put-input">
+            <label>postID</label>
+            <input type = "text" id = "postID-put-input">
+            <input type="submit" value="submit">
+        </form>
+        <script>
+            //get request
+           $('#get').on('click', function () {
+                $.get({
+                    url: 'http://localhost:3000/comments',
+                    success: function (data) {
+                        // the $. ajax() method will automatically parse the JSON and turn it into a JavaScript object for you.
+                        console.log(data);
+                    }
+                });
+           })
+           //post request
+           $("#form").on("submit", function(e){
+                e.preventDefault();
+                var text = $("#comment-input").val();
+                var postID = $("#postID-input").val();
+
+                const date = new Date();
+
+                const data = {
+                    id: date.valueOf(),
+                    text: text,
+                    postId: postID
+                }
+
+                const serializedJSON = JSON.stringify(data)
+                $.ajax({
+                    url: 'http://localhost:3000/comments',
+                    type: "POST",
+                    data: serializedJSON,
+                    dataType: "json",
+                    success: function (data){
+                        console.log(data);
+                        title = $("#comment-input").val(' ');
+                        title = $("#postID-input").val(' ');
+                    }
+                });
+            })
+            //put request
+            $("#form-2").on("submit", function(e){
+                e.preventDefault();
+                var text = $("#put-input").val();
+                var postID = $("#postID-put-input").val();
+
+                const data = {
+                    text: text,
+                    postId: postID
+                }
+                const replaceID = "1";
+
+                const serializedJSON = JSON.stringify(data)
+                $.ajax({
+                    url: 'http://localhost:3000/comments/' + replaceID,
+                    type: "PUT",
+                    data: serializedJSON,
+                    contentType: "application/json",
+                    success: function (data){
+                        console.log(data);
+                        title = $("#put-input").val(' ');
+                        title = $("#postID-put-input").val(' ');
+                    }
+                });
+            })
+        </script>
+    </body>
+</html>
