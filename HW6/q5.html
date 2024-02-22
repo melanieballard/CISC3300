@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    </head>
+    <body>
+        <form id = "name-form">
+            <label>Enter Your Name</label>
+            <input type="text" id = "name">
+            <input type="submit" name="submit">
+        </form>
+        <div id = "display">
+        </div>
+    </body>
+    <script>
+        $("#name-form").on("submit", function(e){
+            e.preventDefault();
+            var name = $("#name").val();
+
+            $.get(`https://api.agify.io/?name=${name}`, function(data){
+                localStorage.setItem("nameandage", JSON.stringify({
+                    name: data.name,
+                    count: data.count,
+                    age: data.age
+                }));
+                $("#display").html(`<p>${data.name} is ${data.age} years old</p>`)
+            });
+        });
+    </script>
+</html>
