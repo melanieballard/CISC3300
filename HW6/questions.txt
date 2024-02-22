@@ -1,0 +1,27 @@
+1. What is HTTP? What are the different HTTP request methods and how do they differ?
+
+HTTP stands for Hypertext Transfer Protocol and specifies request methods to determine how to handle 
+actions between clients and servers. It is the foundation for data exchange on the internet and is initiated 
+by the recipient, usually the web browser. The different methods are Get, Post, Put, Patch, and Delete. Get only 
+retrieves data, while post submits data to a specified resource. Post often changes certain aspects of the server, for 
+example when something is saved, that data alters the state of the server. Put replaces all current representations of the 
+target resource with the request that is submitted, which in turn updates everything in the target. Patch partially modifies a 
+resource, but is much less common than post. Delete deletes a resource. 
+
+2. What is an API? What is JSON?
+
+An API is an Application Programming Interface, or a way for two or more computer programs to communicate with 
+each other. For example, browser APIs include local storage and geolocation services, while scripts with APIs are often thought of 
+as plugins or packages that add additional services or methods to a program. Many large platforms allow their APIs to be used 
+open source, which allows programmers to access and update data on their webpages. We can access these with HTTP get requests. JSON 
+stands for JavaScript Object Notation. These files are text data that JavaScript can parse into JS objects, and JSON files can parse JS
+objects to store their data. JSON data can be sent from a server to a web browser as as tring, which can be parsed with the global JSON object 
+to extract the data and turn it into JS objects. Converting JS objects into a string using JSON notation to send them from browser to server is 
+called serializing, while sending a string of JSON data from a server to a browser is called deserializing. 
+
+3. What is AJAX? What is meant by asynchronous code?
+
+AJAX stands for Asynchronous JavaScript and XML and is a method for loading data into part of a page without having to refresh the entire
+page. Browers have built in objects to allow asynchronous requests without a full reload. Asynchronous code allows code to run in the backround
+without blocking the execution of other code. It is a fundamental concept in JavaScript that allows for partial updates on pages. It allows code blocks 
+to execute at a future point in time by making requests to servers and running code with the results of the requests. 
