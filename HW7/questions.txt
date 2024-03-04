@@ -1,0 +1,11 @@
+2. Both PHP and JavaScript are interpreted languages, meaning they do not use a compiler to read and translate
+the code into executable machine code, but are rather read and executed by an interpreter either on the browser or 
+server the code is running on. Both languages are also dynamically typed, which makes the use of
+variables more flexible by not explicitly determining their type at declaration. However, while both are used in web development, 
+their specific roles differ. PHP is more useful for data manipulation, server side actions, and connection to databases like SQL. 
+JavaScript handles more DOM manipulation, AJAX HTTP requests, and other client-side tasks. They also have some syntax similarities, with 
+logical operators and other general coding principles, but also some syntax differences, like with how they declare variables. PHP 
+variables are declared with a $, which is the JQuery symbol for identification. Vanilla JavaScript declares variables more standardly 
+with keywords like var, const, and let.
+
+3. MVC stands for Model View Controller and is a architectural pattern used to 
