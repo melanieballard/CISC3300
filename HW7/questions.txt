@@ -1,4 +1,5 @@
-2. Both PHP and JavaScript are interpreted languages, meaning they do not use a compiler to read and translate
+2. What are some examples of how PHP and JavaScript are alike and how they differ?
+Both PHP and JavaScript are interpreted languages, meaning they do not use a compiler to read and translate
 the code into executable machine code, but are rather read and executed by an interpreter either on the browser or 
 server the code is running on. Both languages are also dynamically typed, which makes the use of
 variables more flexible by not explicitly determining their type at declaration. However, while both are used in web development, 
@@ -8,4 +9,11 @@ logical operators and other general coding principles, but also some syntax diff
 variables are declared with a $, which is the JQuery symbol for identification. Vanilla JavaScript declares variables more standardly 
 with keywords like var, const, and let.
 
-3. MVC stands for Model View Controller and is a architectural pattern used to 
+3. Define MVC, what are the responsibilities of each piece?
+MVC stands for Model View Controller and is a architectural pattern used to separate aspects of website development into three 
+main logical components. Each component is meant to handle specific aspects of the application. The Model component is responsible for 
+all the data related logic that the program uses, for example any data being transferred between the View and the Controller, and can add or 
+retrieve data from the database. The View is the component responsible for the UI logic of the application and are create dbased on data taken from 
+the Model through the Controller. The Controller is the component that enables connection between the Model and the View. It sends requests to the Model 
+for data processing and interacts with the View to alter the output based on this data. The Model would be an example of SQL/PHP, the Controller JavaScript,
+and the View HTML/CCS.
