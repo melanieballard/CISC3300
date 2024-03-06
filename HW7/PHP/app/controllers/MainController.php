@@ -6,6 +6,7 @@ use app\models\Post;
 
 class MainController extends Controller
 {
+
     protected $twig;
     public function homepage()
     {
