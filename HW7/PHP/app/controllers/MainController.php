@@ -7,7 +7,6 @@ use app\models\Post;
 class MainController extends Controller
 {
 
-    protected $twig;
     public function homepage()
     {
         $template = $this->twig->load('main/homepage.twig');
@@ -22,12 +21,8 @@ class MainController extends Controller
         //todo create a 404 twig template in app/public/assets/views
         //an example is in app/controllers/UsersController
         //and return it from this method
-        $template = $this->twig->load('view/404.twig');
-        $notFoundData = [
-            'data' => 'Error: 404 Not found.',
-        ];
-        echo $template->render($notFoundData);
-
+        $template = $this->twig->load('main/404.twig');
+        echo $template->render();
 
     }
 

@@ -7,7 +7,6 @@ use app\models\User;
 class UserController extends Controller
 {
 
-    protected $twig;
     public function index()
     {
         $userModel = new User();
