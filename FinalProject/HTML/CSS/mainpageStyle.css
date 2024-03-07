@@ -1,0 +1,21 @@
+body {
+    background-image: url("main-bg.jpg");
+
+}
+
+@font-face {
+    font-family: "Baloo 2", sans-serif;
+    src: url("Baloo2-Medium.ttf");
+}
+
+#header {
+    color: rgb(150, 136, 161);
+    background-color: transparent;
+    font-family: "Baloo 2";
+    font-size: larger;
+}
+
+#header > h4 {
+    font-size: large;
+}
+

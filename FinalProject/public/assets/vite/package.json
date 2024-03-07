@@ -1,0 +1,19 @@
+{
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "APP_ENV=development vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "vue": "^3.4.16"
+  },
+  "devDependencies": {
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.3",
+    "jquery": "^3.7.1",
+    "sass": "^1.71.1",
+    "vite": "^5.1.0",
+    "vite-plugin-live-reload": "^3.0.3"
+  }
+}
