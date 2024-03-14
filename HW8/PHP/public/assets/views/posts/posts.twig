@@ -8,16 +8,16 @@
 
         <div>
             <h3>posts</h3>
-            {% for key, value in posts %}
-                id : {{ value.id }}
-                name : {{ value.name }}
-                description : {{value.description}}
+            {% for post in posts %}
+                id : {{ post.id }}
+                name : {{ post.name }}
+                description : {{post.description}}
                 <br>
             {% endfor %}
         </div>
 
         <div>
-            <form action = "/posts" method = "POST" id = "post">
+            <form action = "/posts/index.php" method = "POST" id = "post">
                 <label>Name</label>
                 <input type = "text" name = "name">
                 <label>Description</label>
