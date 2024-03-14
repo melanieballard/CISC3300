@@ -22,4 +22,40 @@ class PostController extends Controller
         echo $template->render($homepageData);
     }
 
-}
+
+    public function create(){
+
+        //get form data
+        $name = $_POST['name'] ?? null;
+        $description = $_POST['description'] ?? null;
+
+        // if null
+        if (!$name || !$description) {
+            http_response_code(400);
+            echo "Error: Name and description are required.";
+            return;
+        }
+
+        $name = htmlspecialchars($_POST['name']);
+        $description = htmlspecialchars($_POST['description']);
+
+        $date = date('His');
+
+        //create new post
+        $newPost = [
+            'id' => $date,
+            'name' => $name,
+            'description' => $description,
+        ];
+
+        //save new posts
+        $postModel = new Post();
+        $postModel->savePost($newPost);
+
+        header("Location: /posts");
+        exit();
+        
+        }
+    }
+
+
