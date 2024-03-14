@@ -17,11 +17,13 @@ class Post
         ]
     ];
 
+    public function savePost($newPost){
+        $this->posts[] = $newPost;
+    }
+
     public function getPosts() {
         return $this->posts;
     }
 
-    public function savePost($newPost){
-        $this->posts[] = $newPost;
-    }
+  
 }

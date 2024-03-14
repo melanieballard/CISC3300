@@ -30,12 +30,13 @@ switch ($url){
         break;
     case "/posts":
         $controller = new PostController();
+        $controller->index();
+        break;
+    case '/posts/index.php':
+        $controller = new PostController();
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
             $controller->create();
-            $controller->index();
-            break;
         }
-        $controller->index();
         break;
     case "/":
         $controller->homepage();
