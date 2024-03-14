@@ -1,0 +1,54 @@
+1. What does it mean to escape data? How does escaping data help us avoid malicious
+code?
+
+Escaping data means encoding or cleaning data inputted to prevent it from being interpreted as code 
+by the browser or wherever it is being inputted to. This is important in preventing XSS attacks by making
+any malicious code defunct and unable to run. An example of how to escape data is to transform open and close 
+tags into thier HTML representatives, like &lt, so they are no longer executable as code.
+
+2. Please read through: https://www.codecademy.com/article/what-is-rest
+    a. What is REST? What is meant by Statelessness?
+        REST is an architectural style that provides standards for communication, facilitating easy transfer of 
+        information. Compliant systems are stateless, which means that the server does not need to know what state 
+        the client is in, and vice versa. This makes it so both ends can understand any message received.  
+    
+    b. What is a resource?
+        A resource describes any object, document, or thing that may be stored or sent to other services. This is in 
+        contrast to commands, which are instructions that require more specific information. Statelessness is achieved 
+        through the use of resources.
+    
+    c. Look at the section on Path design: In a RESTful architecture paradigm what
+    would be the proper way to create a path for: (provide URL and HTTP method):
+        i. getting a list of users?
+
+            GET examplesite.com/users
+            Accept: application/json
+
+        ii. getting a particular user?
+
+            GET examplesite.com/users/46
+            Accept: application/json
+
+        iii. saving a user?
+            POST examplesite.com/user
+            Body:
+            {
+                user: {
+                “name” = “Jane Doe”,
+                “email” = “janedoe@gmail.com”
+                }
+            }
+
+3. What is a Cookie?
+
+A cookie is a piece of data that a website sends to a user's browser that is then stored on the users 
+local device. They are commonly used to track user interactions and store information about activity and 
+preferences to be used for reccomendations, analytics, and ads.
+
+4. What is a Session?
+
+A session is a period of interaction between a user and a web app where information about the user's activity 
+is stored. They last as long as the user is active on the site and retain statefull information, including authentication 
+status, a shopping cart, or other contextual information. Sessions also have unique IDs that allow the server to 
+associate specific requests from a user with the correct data.
+
