@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Users</title>
+    </head>
+    <body>
+
+        <div>
+            <h3>users</h3>
+            {% for key, value in users %}
+                id : {{ value.id }}
+                name : {{ value.name }}
+                <br>
+            {% endfor %}
+        </div>
+
+
+    </body>
+</html>

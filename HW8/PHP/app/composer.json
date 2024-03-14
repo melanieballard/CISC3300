@@ -1,0 +1,17 @@
+{
+    "name": "nathanhishon/app",
+    "autoload": {
+        "psr-4": {
+            "Nathanhishon\\App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "nate hishon",
+            "email": "nathan.hishon@gmail.com"
+        }
+    ],
+    "require": {
+        "twig/twig": "^3.8"
+    }
+}
