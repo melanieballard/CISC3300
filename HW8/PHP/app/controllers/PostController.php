@@ -12,16 +12,14 @@ class PostController extends Controller
 
     public function index()
     {
-        $postModel = new Post();
         //the load method will start at the public/assets/views directory
         //you can view the set up in the app/core/Controller class
         $template = $this->twig->load('posts/posts.twig');
         $homepageData = [
-            'posts' => $postModel->getPosts(),
+            'posts' => Post::getPosts(),
         ];
         echo $template->render($homepageData);
     }
-
 
     public function create(){
 
@@ -49,12 +47,9 @@ class PostController extends Controller
         ];
 
         //save new posts
-        $postModel = new Post();
-        $postModel->savePost($newPost);
+        Post::savePost($newPost);
+        header('Location: /posts');
 
-        header("Location: /posts");
-        exit();
-        
         }
     }
 

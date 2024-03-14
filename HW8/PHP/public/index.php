@@ -21,27 +21,30 @@ $url = $_SERVER["REQUEST_URI"];
 //if it is something else return a 404 view from the main controller
 
 
-$controller = new MainController();
+$controller = new PostController();
 
-switch ($url){
-    case "/users":
-        $controller = new UserController();
-        $controller->index();
+switch ($_SERVER['REQUEST_METHOD']) {
+    case 'GET':
+        if ($url === '/users') {
+            $controller = new UserController();
+            $controller->index();
+        } elseif ($url === '/posts') {
+            $controller->index();
+        } elseif($url === '/'){
+            $controller = new MainController();
+            $controller->homepage();
+        } else {
+            $controller = new MainController();
+            $controller->notFound();
+        }
         break;
-    case "/posts":
-        $controller = new PostController();
-        $controller->index();
-        break;
-    case '/posts/index.php':
-        $controller = new PostController();
-        if($_SERVER['REQUEST_METHOD'] === 'POST'){
+    case 'POST':
+        if ($url === '/posts') {
             $controller->create();
         }
         break;
-    case "/":
-        $controller->homepage();
-        break;
     default:
+        $controller = new MainController();
         $controller->notFound();
         break;
 }
