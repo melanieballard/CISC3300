@@ -1,5 +1,9 @@
 body {
     background-image: url("main-bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 1200px;
 
 }
 
@@ -19,3 +23,9 @@ body {
     font-size: large;
 }
 
+#body {
+    color: rgb(162, 151, 171);
+    background-color: transparent;
+    font-family: "Baloo 2";
+    font-size: medium;
+}
