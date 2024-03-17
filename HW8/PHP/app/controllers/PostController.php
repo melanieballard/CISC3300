@@ -45,10 +45,8 @@ class PostController extends Controller
             'description' => $description
         ];
 
-        $serializedData = serialize($newPost);
-
         //save new posts to main array
-        Post::savePost($date, $serializedData);
+        Post::savePost($date, $newPost);
         header('Location: /posts');
         exit();
 

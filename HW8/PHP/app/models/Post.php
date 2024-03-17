@@ -4,17 +4,28 @@ namespace app\models;
 
 class Post
 {
-    public static $posts = []; //array of posts across all class instances
+    private static $file = 'posts.txt'; //array of posts across all class instances
 
     //save post
     public static function savePost($id, $newPost){
-        $unserialize = unserialize($newPost);
-        self::$posts[$id] = $unserialize;
+        $posts = [];
+        if (file_exists(self::$file)) {
+            $posts = unserialize(file_get_contents(self::$file));
+        }
+
+        // Add new post
+        $posts[] = $newPost;
+
+        // Serialize and save posts to file
+        file_put_contents(self::$file, serialize($posts));
     }
 
     //return posts
     public static function getPosts() {
-        return self::$posts;
+        if (file_exists(self::$file)) {
+            return unserialize(file_get_contents(self::$file));
+        }
+        return [];
     }
 
 }
