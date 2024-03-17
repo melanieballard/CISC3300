@@ -7,8 +7,9 @@ class Post
     public static $posts = []; //array of posts across all class instances
 
     //save post
-    public static function savePost($newPost){
-        self::$posts[] = $newPost;
+    public static function savePost($id, $newPost){
+        $unserialize = unserialize($newPost);
+        self::$posts[$id] = $unserialize;
     }
 
     //return posts
