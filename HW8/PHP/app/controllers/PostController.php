@@ -23,8 +23,31 @@ class PostController extends Controller
 
     public function create(){
 
-        //save new posts
-        Post::savePost($_POST);
+        $name = $_POST['name'] ?? null;
+        $description = $_POST['description'] ?? null;
+
+        //null check
+        if (!$name || !$description) {
+            http_response_code(400);
+            echo "Error: Name and description are required.";
+            return;
+        }
+
+        //xss protection
+        $name = htmlspecialchars($name);
+        $description = htmlspecialchars($description);
+
+        $date = date('His'); //gen id
+
+        // Store data as array
+        $newPost = [
+            'id' => $date,
+            'name' => $name,
+            'description' => $description
+        ];
+
+        //save new posts to main array
+        Post::savePost($newPost);
         header('Location: /posts');
 
         }
