@@ -45,7 +45,7 @@ class PostController extends Controller
             'description' => $description
         ];
 
-        //save new posts to main array
+        //save new posts to file
         Post::savePost($date, $newPost);
         header('Location: /posts');
         exit();
