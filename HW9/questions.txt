@@ -7,4 +7,4 @@ and other methods to display data relations.
 PDO stands for PHP Data Objects and is an interface used to access databases in PHP. Prepared statements are included in PDO and allow the programmer 
 to prepare query statements without the exact parameter values to be executed later on with inserted parameters. The use of prepared statements is beneficial in 
 multiple ways as they protect against SQL injection attacks by differentiating between SQL injections and user inserted data, help make code cleaner and reusable, 
-maintain type integrity, and improve program performence by decreasing lines of code and facilitaing easy execution of queries.
+maintain type integrity, and improve program performence by decreasing lines of code and facilitaing easy execution of 
