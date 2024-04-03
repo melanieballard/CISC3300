@@ -50,6 +50,7 @@ class PostController
             //TODO 5-a: get all posts
             $post = $postModel->getAllPosts();
         }
+        echo json_encode($post);
 
         exit();
     }
@@ -93,6 +94,12 @@ class PostController
         $postData = $this->validatePost($inputData);
 
         //TODO 5-c: update a post
+        $post = new Post();
+        $post->updatePost([
+            'id' => $id,
+            'title' => $inputData['title'],
+            'description' => $inputData['description'],
+        ]);
 
         http_response_code(200);
         echo json_encode([
@@ -108,6 +115,12 @@ class PostController
         }
 
         //TODO 5-d: delete a post
+        $post = new Post();
+        $post->deletePost(
+            [
+                'id'=> $id
+            ]
+        );
 
         http_response_code(200);
         echo json_encode([
