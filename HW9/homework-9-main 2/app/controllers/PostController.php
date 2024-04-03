@@ -41,11 +41,14 @@ class PostController
     }
 
     public function getPosts($id) {
+        $postModel = new Post();
         header("Content-Type: application/json");
         if ($id) {
-            //TODO 5-c i: get a post data by id
+            //TODO 5-c i: get a post data by id    
+            $post = $postModel->getPostByID($id);
         } else {
             //TODO 5-a: get all posts
+            $post = $postModel->getAllPosts();
         }
 
         exit();
@@ -59,6 +62,13 @@ class PostController
         $postData = $this->validatePost($inputData);
 
         //TODO 5-b: save a post
+        $postModel = new Post();
+        $postModel->savePost( 
+            [
+            'title' => $postData['title'],
+            'description' => $postData['description'],
+            ]
+        );
 
         http_response_code(200);
         echo json_encode([
