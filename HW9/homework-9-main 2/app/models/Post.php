@@ -26,7 +26,7 @@ class Post
 
     public function getPostByID($id) {
         $connectedPDO = $this->connect();
-        $sql = "SELECT * FROM `posts` WHERE `id` = :id";
+        $sql = "SELECT * FROM posts WHERE id = :id";
 
         $statement = $connectedPDO->prepare($sql);
         $statement->execute($id);
