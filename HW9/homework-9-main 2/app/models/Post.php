@@ -29,7 +29,8 @@ class Post
         $sql = "SELECT * FROM posts WHERE id = :id";
 
         $statement = $connectedPDO->prepare($sql);
-        $statement->execute($id);
+        $statement->bindParam(':id', $id, PDO::PARAM_INT);
+        $statement->execute();
         
         return $statement->fetch();
     }
