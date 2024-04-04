@@ -92,9 +92,14 @@ class PostController
             'description' => $_PUT['description'] ? $_PUT['description'] : false,
         ];
         $postData = $this->validatePost($inputData);
+        
+        $post = new Post();
+        
+        $getPost = $post->getPostByID($id);
+        echo json_encode($getPost);
 
         //TODO 5-c: update a post
-        $post = new Post();
+        
         $post->updatePost(
             [
             'id' => $id,
@@ -103,14 +108,11 @@ class PostController
             ]
         );
 
-        $getPost = $post->getPostByID($id);
-        echo json_encode($getPost);
-        
         http_response_code(200);
         echo json_encode([
             'success' => true
         ]);
-  
+
         exit();
     }
 
