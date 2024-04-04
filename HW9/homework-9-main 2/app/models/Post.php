@@ -26,13 +26,12 @@ class Post
 
     public function getPostByID($id) {
         $connectedPDO = $this->connect();
-        $sql = "SELECT * FROM posts WHERE id = :id";
+        $sql = "SELECT * FROM `posts` WHERE `id` = :id";
 
         $statement = $connectedPDO->prepare($sql);
         $statement->execute($id);
         
-        $result = $statement->fetch();
-        return $result;
+        return $statement->fetch();
     }
    
     public function getAllPosts(){
@@ -64,10 +63,8 @@ class Post
         $statement = $connectedPDO->prepare($sql);
         $statement->execute($inputData);
 
-        $result = $statement->fetchAll();
-        if (is_array($result) && count($result)) {
-            return $result;
-        }
+        $result = $statement->fetch();
+        return $result;     
     }
 
     public function deletePost($id){

@@ -95,16 +95,22 @@ class PostController
 
         //TODO 5-c: update a post
         $post = new Post();
-        $post->updatePost([
+        $post->updatePost(
+            [
             'id' => $id,
-            'title' => $inputData['title'],
-            'description' => $inputData['description'],
-        ]);
+            'title' => $postData['title'],
+            'description' => $postData['description'],
+            ]
+        );
 
+        $getPost = $post->getPostByID($id);
+        echo json_encode($getPost);
+        
         http_response_code(200);
         echo json_encode([
             'success' => true
         ]);
+  
         exit();
     }
 
