@@ -1,10 +1,6 @@
 body {
-    background-image: url("main-bg.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 1200px;
-
+    background-color: black;
+    background: scroll;
 }
 
 @font-face {
@@ -14,7 +10,6 @@ body {
 
 #header {
     color: rgb(150, 136, 161);
-    background-color: transparent;
     font-family: "Baloo 2";
     font-size: larger;
 }
@@ -25,7 +20,12 @@ body {
 
 #body {
     color: rgb(162, 151, 171);
-    background-color: transparent;
     font-family: "Baloo 2";
+    font-size: medium;
+}
+
+button {
+    color:rgb(150, 136, 161);
+    font-family: 'Baloo 2';
     font-size: medium;
 }

@@ -96,6 +96,7 @@ class PostController
         $post = new Post();
         
         $getPost = $post->getPostByID($id);
+        echo json_encode($getPost);
 
         //TODO 5-c: update a post
         

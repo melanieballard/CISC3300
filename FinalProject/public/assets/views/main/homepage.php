@@ -12,12 +12,12 @@
             <div class = "row">
                 <div id = "header" class = "col-md-4 offset-4 text-center mt-4">
                     <h1>Outfit Generator</h1>
-                    <h4>Use Your Spotify Data and the Current Weather to Inspire</h4>
+                    <h4>Use Your Spotify Data and the Current Weather to Inspire Outfits</h4>
                 </div>
             </div>
             <div class = "row">
                 <div id = "body" class = "col-md-6 offset-3 text-center mt-5">
-                    <p>enter sample text here sample sample sample sample sample </p>
+                    <button id = 'enter'>Click Here</button>
                 </div>
             </div>
         </div>
