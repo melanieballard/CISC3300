@@ -6,10 +6,14 @@ $routes = [
     'users' => [
         'controller' => UserController::class,
         'GET' => 'getUsers',
-        'POST' => 'saveUsers'
+        'POST' => 'saveUser'
     ],
     'view-users' => [
         'controller' => UserController::class,
         'GET' => 'getUsers',
+    ],
+    'spotify' => [
+        'controller' => UserController::class,
+        'GET' => 'viewUsers',
     ]
 ];

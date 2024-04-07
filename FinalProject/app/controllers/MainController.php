@@ -15,6 +15,7 @@ class MainController extends Controller
 
     public function notFound()
     {
+        include '../public/assets/views/main/notFound.php';
     }
 
 }

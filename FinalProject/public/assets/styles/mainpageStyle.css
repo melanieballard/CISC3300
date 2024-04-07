@@ -4,64 +4,71 @@
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
     margin: 0; 
+    font-family: "Baloo 2";
 }
 
 .container-fluid {
     text-align: center;
     background-color: black;
-    margin-top: 40px;
+}
+
+.container {
+    align-items: center;
+    margin-top: 25vh;
 }
 
 .center {
     background-color: rgb(150, 136, 161);
-    margin-left: 400px;
-    margin-right: 400px;
-    padding-bottom: 130px;
-    padding-top: 100px;
     border-radius: 20%;
+    margin-left: 200px;
+    margin-right: 200px;
 }
 
 #header {
     color: rgb(150, 136, 161);
-    font-family: "Baloo 2";
     font-size: larger;
     background-color: rgb(58, 56, 58);
-    margin-top: 400px;
-}
-
-#header > h4 {
-    font-size: large;
-}
-
-#header, #content button {
-    color: rgb(150, 136, 161);
-    font-family: 'Baloo 2';
 }
 
 #content {
     color: rgb(162, 151, 171);
-    font-family: "Baloo 2";
     font-size: medium;
+}
+
+a#go{
+    font-size: 12px;
+    color:rgb(183, 166, 196);
+    text-decoration: none;
+}
+
+a:hover{
+    color:rgb(103, 95, 110);
+    font-weight: bold;
+    text-decoration: underline;
 }
 
 button {
     color:rgb(150, 136, 161);
     background-color: rgb(62, 60, 63);
-    font-family: 'Baloo 2';
-    font-size: medium;
     border-radius: 30%;
     border-color: rgb(137, 126, 146);
 }
 
+p {
+    font-size: 30px;
+    font-weight: bolder;
+    color:rgb(137, 126, 146);
+}
+
+
 .box {
     background-color: rgb(62, 60, 63);
     border-radius: 10px;
-    padding: 20px;
     border-color: rgb(150, 136, 161);
-    width: 50%;
+    padding: 10px;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    width: fit-content;
 }
