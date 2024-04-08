@@ -6,7 +6,7 @@
 body {
     height: 100vh;
     margin: 0; 
-    font-family: "Baloo 2";
+    font: "Baloo 2", "sans-serif";
 }
 
 .container-fluid {
@@ -21,15 +21,19 @@ body {
 
 .center {
     background-color: rgb(150, 136, 161);
-    border-radius: 20%;
+    border-radius: 10%;
     margin-left: 200px;
     margin-right: 200px;
 }
 
 #header {
     color: rgb(150, 136, 161);
-    font-size: larger;
+    font-size: large;
     background-color: rgb(58, 56, 58);
+}
+
+#header h4{
+    font-size: medium;
 }
 
 #content {
@@ -70,5 +74,5 @@ p {
     padding: 10px;
     margin-top: 15px;
     margin-bottom: 25px;
-    width: fit-content;
+    justify-content: center;
 }

@@ -1,6 +1,7 @@
 <?php
 
 use app\controllers\UserController;
+use app\controllers\AuthController;
 
 $routes = [
     'users' => [
@@ -15,5 +16,13 @@ $routes = [
     'spotify' => [
         'controller' => UserController::class,
         'GET' => 'viewUsers',
+    ],
+    'login' => [
+        'controller' => AuthController::class,
+        'GET' => 'login',
+    ],
+    'callback' => [
+        'controller' => AuthController::class,
+        'GET' => 'callback',
     ]
 ];

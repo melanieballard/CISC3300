@@ -40,7 +40,7 @@ class UserController extends Controller
     }
 
     public function viewUsers() {
-        include '../../public/assets/views/spotify/userInfo.php';
+        include '../public/assets/views/spotify/userInfo.php';
     }
 
 }
