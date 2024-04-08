@@ -20,9 +20,5 @@ $routes = [
     'login' => [
         'controller' => AuthController::class,
         'GET' => 'login',
-    ],
-    'callback' => [
-        'controller' => AuthController::class,
-        'GET' => 'callback',
     ]
 ];
