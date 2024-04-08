@@ -1,7 +1,7 @@
 <?php
 
 use app\controllers\UserController;
-use app\controllers\AuthController;
+use app\controllers\DataController;
 
 $routes = [
     'users' => [
@@ -18,7 +18,7 @@ $routes = [
         'GET' => 'viewUsers',
     ],
     'login' => [
-        'controller' => AuthController::class,
-        'GET' => 'login',
+        'controller' => DataController::class,
+        'GET' => 'getPlaylists',
     ]
 ];

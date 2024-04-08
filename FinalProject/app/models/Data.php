@@ -1,14 +1,16 @@
 <?php
 
-namespace app\controllers;
-use app\core\Controller;
+namespace app\models;
+use app\core\Model;
 
 $_ENV = parse_ini_file(filename: '../.env');
 
-class AuthController extends Controller {
+class Data{
 
+    use Model;
 
-    public function login(){
+    public function authenticate(){
+
         $clientId = $_ENV["CID"];
         $clientSecret = $_ENV["CS"];
         
@@ -48,9 +50,42 @@ class AuthController extends Controller {
         $tokenData = json_decode($response, true);
         
         // Access token obtained from Spotify
-        $accessToken = $tokenData['access_token'];
-        
-        // Use the access token to make authenticated requests to the Spotify API
-        echo "Access token: $accessToken";
+        $accessToken = $tokenData['access_token'];  
+        return $accessToken; 
+
     }
+
+    public function playlists($token){
+        $playlistUrl = 'https://api.spotify.com/v1/me/playlists';
+
+        // Prepare headers for the GET request
+        $headers = [
+            'Authorization: Bearer ' . $token,
+        ];
+
+        // Create stream context for making the GET request
+        $context = stream_context_create([
+            'http' => [
+                'method' => 'GET',
+                'header' => implode("\r\n", $headers),
+            ],
+        ]);
+
+        // Make the GET request to retrieve user's playlists
+        $playlistResponse = file_get_contents($playlistUrl, false, $context);
+
+        // Handle the response
+        if ($playlistResponse === false) {
+            // Error handling
+            exit("Failed to retrieve user's playlists.");
+        }
+
+        // Parse the JSON response
+        $playlists = json_decode($playlistResponse, true);
+
+        // Output user's playlists
+        return $playlists;
+
+    }
+
 }
