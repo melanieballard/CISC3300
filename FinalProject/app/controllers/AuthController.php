@@ -3,8 +3,7 @@
 namespace app\controllers;
 use app\core\Controller;
 
-
-require __DIR__ . '/vendor/autoload.php';
+$_ENV = parse_ini_file(filename: '../.env');
 
 class AuthController extends Controller {
     public function login() {
