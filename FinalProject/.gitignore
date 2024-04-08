@@ -5,3 +5,4 @@ dist
 ./public/assets/vite/node_modules
 .idea
 *.env
+vendor

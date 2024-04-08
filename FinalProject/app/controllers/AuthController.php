@@ -3,9 +3,12 @@
 namespace app\controllers;
 use app\core\Controller;
 
+
+require __DIR__ . '/vendor/autoload.php';
+
 class AuthController extends Controller {
     public function login() {
-        $clientId = .clientID;
+        $clientId = $_ENV['CID'];
         $redirectUri = 'http://localhost:8888/callback';
         $scopes = 'user-read-private user-read-email'; 
         $state = bin2hex(random_bytes(16)); 
@@ -25,8 +28,8 @@ class AuthController extends Controller {
     }
 
     public function callback() {
-        $clientID = .clientID;
-        $clientSecret = .clientSecret;
+        $clientId = $_ENV['CID'];
+        $clientSecret = $_ENV['CS'];
         $redirectUri = 'http://localhost:8888/callback';
     
         $code = $_GET['code'];
