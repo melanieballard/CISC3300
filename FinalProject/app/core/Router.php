@@ -3,6 +3,7 @@
 namespace app\core;
 
 use app\controllers\MainController;
+use app\controllers\DataController;
 
 class Router
 {
@@ -13,10 +14,14 @@ class Router
     }
 
     public function serveRoute() {
+        $uri = $_SERVER['REQUEST_URI'];
         $uriParse = explode('/', trim($_SERVER['REQUEST_URI'], '/'));
         $method =  $_SERVER['REQUEST_METHOD'];
 
-        if ($uriParse[0]) {
+        if (strpos($uri, '/callback') === 0) {
+            $this->handleSpotifyCallback();
+        }else{
+            if ($uriParse[0]) {
             $route = $this->routeList[$uriParse[0]];
             if ($route) {
                 $controller = $route['controller'];
@@ -31,5 +36,11 @@ class Router
             $homepageController = new MainController();
             $homepageController->homepage();
         }
+        }
+    }
+
+    public function handleSpotifyCallback(){
+        $dataController = new DataController();
+        $dataController->callback();
     }
 }
