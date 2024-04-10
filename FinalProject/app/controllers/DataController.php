@@ -9,6 +9,7 @@ $_ENV = parse_ini_file(filename: '../.env');
 
 
 class DataController extends Controller{
+
     public function login() {
         session_start();
 
@@ -68,12 +69,14 @@ class DataController extends Controller{
         $accessToken = json_decode($accessTokenResponse, true)['access_token'];
         $_SESSION['access_token'] = $accessToken;
 
-        $db->query("INSERT INTO access_tokens (user_id, token) VALUES ('$userId', '$accessToken')");
+        $saveToken = new Data();
+        $saveToken->saveToken($accessToken);
     }
 
     public function getPlaylists(){
-        $newData = new Data();
 
+        $newData = new Data();
+        $userToken = $newData->getToken();
         $userPlaylists = $newData->playlists($userToken);
 
         echo "User's Playlists:\n";
@@ -82,5 +85,4 @@ class DataController extends Controller{
         }
 
     }
-
 }

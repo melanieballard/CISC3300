@@ -19,6 +19,6 @@ $routes = [
     ],
     'login' => [
         'controller' => DataController::class,
-        'GET' => 'login',
+        'POST' => 'login',
     ]
 ];

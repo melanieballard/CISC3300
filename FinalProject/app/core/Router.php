@@ -19,7 +19,8 @@ class Router
         $method =  $_SERVER['REQUEST_METHOD'];
 
         if (strpos($uri, '/callback') === 0) {
-            $this->handleSpotifyCallback();
+            $dataController = new DataController();
+            $dataController->callback();
         }else{
             if ($uriParse[0]) {
             $route = $this->routeList[$uriParse[0]];
@@ -37,10 +38,5 @@ class Router
             $homepageController->homepage();
         }
         }
-    }
-
-    public function handleSpotifyCallback(){
-        $dataController = new DataController();
-        $dataController->callback();
     }
 }
