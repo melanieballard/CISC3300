@@ -15,10 +15,10 @@ $routes = [
     ],
     'spotify' => [
         'controller' => UserController::class,
-        'GET' => 'viewUsers',
+        'GET' => 'logInUser',
     ],
     'login' => [
         'controller' => DataController::class,
-        'POST' => 'login',
+        'GET' => 'login',
     ]
 ];

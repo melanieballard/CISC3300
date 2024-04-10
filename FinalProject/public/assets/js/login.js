@@ -5,10 +5,11 @@ $(document).ready(function(){
         var username = $('#username').val();
         
         $.ajax({
-            url: 'DataController.php',
+            url: 'Data.php',
             type: 'POST',
             data: {username: username},
             success: function(response){
+                console.log(response);
                 window.location.href = '/login';
             },
             error: function(xhr, status, error){
