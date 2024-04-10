@@ -11,20 +11,14 @@ class Data{
     use Model;
     use Database;
 
-    public function saveToken($token){
-
-        if(isset($_POST['username'])){
-            $username = $_POST['username'];
-            return $this->query("INSERT INTO access_tokens (username, token) VALUES ('$username','$token')");
-        }
-        else{
-            echo 'Error: Username not submitted';
-            exit();
-        }
+    public function saveToken($token, $username){
+        return $this->query("INSERT INTO access_tokens (username, token) VALUES ('$username','$token')");
     }
 
-    public function getToken(){
-        return $this->query("SELECT * FROM access_tokens WHERE id = :id");
+    public function getToken($id){
+        $sql = "SELECT * FROM access_tokens WHERE id = :id";
+        $params = [':id' => $id];
+        return $this->query($sql, $params);
     }
 
     public function playlists($token){

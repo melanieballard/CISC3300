@@ -11,12 +11,8 @@
     </head>
     <body class = "container-fluid h-100 d-grid place-items-center">
         <div class = "container">
-            <h1>Submit Username</h1>
-            <form id="usernameForm">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username">
-                <button type="submit" id="go">Log In</button>
-            </form>
+            <h1>User Playlists</h1>
+            
         </div>
     </body>
 </html>

@@ -17,8 +17,16 @@ $routes = [
         'controller' => UserController::class,
         'GET' => 'logInUser',
     ],
+    'postUsername' => [
+        'controller' => DataController::class,
+        'POST' => 'handleUsername'
+    ],
     'login' => [
         'controller' => DataController::class,
         'GET' => 'login',
+    ],
+    'playlists' => [
+        'controller' => DataController::class,
+        'GET' => 'getPlaylists'
     ]
 ];

@@ -7,15 +7,26 @@ use app\models\Data;
 
 $_ENV = parse_ini_file(filename: '../.env');
 
-
+session_start();
 class DataController extends Controller{
 
+    public function handleUsername(){
+
+        if(isset($_POST['username'])){
+            $username = $_POST['username'];
+            $_SESSION["username"] = $username;
+        }else{
+            echo 'Error: Username not submitted';
+            exit();
+        }
+
+    }
+
     public function login() {
-        session_start();
 
         $clientId = $_ENV["CID"];
         $redirectUri = 'http://localhost:8888/callback';
-        $scopes = 'user-read-private user-read-email'; // Add required scopes
+        $scopes = 'user-read-private user-read-email playlist-read-private'; // Add required scopes
         $state = bin2hex(random_bytes(16)); // Generate a unique state parameter
 
         $_SESSION['spotify_state'] = $state; // Store the state in session
@@ -30,10 +41,10 @@ class DataController extends Controller{
 
         header('Location: ' . $authorizeUrl);
         exit();
+
     }
 
     public function callback() {
-        session_start();
 
         $clientId = $_ENV["CID"];
         $clientSecret = $_ENV["CS"];
@@ -69,14 +80,24 @@ class DataController extends Controller{
         $accessToken = json_decode($accessTokenResponse, true)['access_token'];
         $_SESSION['access_token'] = $accessToken;
 
+        $username = $_SESSION['username'];
+
         $saveToken = new Data();
-        $saveToken->saveToken($accessToken);
+        $saveToken->saveToken($accessToken, $username);
+
+        header('Location: /playlists');
+        exit();
+
+        
     }
 
     public function getPlaylists(){
 
         $newData = new Data();
-        $userToken = $newData->getToken();
+
+        $username = $_SESSION['username'];
+        $userToken = $newData->getToken($username);
+
         $userPlaylists = $newData->playlists($userToken);
 
         echo "User's Playlists:\n";
