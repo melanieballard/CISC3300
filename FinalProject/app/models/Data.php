@@ -51,7 +51,6 @@ class Data{
         // Check if the response contains the user ID
         if (isset($profile_data['id'])) {
             $user_id = $profile_data['id'];
-            echo 'User ID: ' . $user_id . '<br>';
         } else {
             echo 'Error: User ID not found in response<br>';
         }
@@ -68,13 +67,10 @@ class Data{
         // Make the GET request to retrieve playlists
         $playlists_response = $this->make_get_request($playlists_url, $headers);
 
-        $playlists_data = json_decode($playlists_response, true);
-
         // Encode the playlists data to JSON
-        $json_data = json_encode($playlists_data);
+        echo $playlists_response;
+        return $playlists_response;
 
-        $file_path = "spotify_playlists.json";
-        file_put_contents($file_path, $json_data);
     }
 
 }
