@@ -11,47 +11,70 @@ class Data{
     use Model;
     use Database;
 
+    function make_get_request($url, $headers) {
+        $ch = curl_init($url);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $response = curl_exec($ch);
+        curl_close($ch);
+        return $response;
+    }
+
     public function saveToken($token, $username){
         return $this->query("INSERT INTO access_tokens (username, token) VALUES ('$username','$token')");
     }
 
     public function getToken($id){
-        $sql = "SELECT * FROM access_tokens WHERE id = :id";
+        $sql = "SELECT token FROM access_tokens WHERE username = :id";
         $params = [':id' => $id];
         return $this->query($sql, $params);
     }
 
     public function playlists($token){
-        $playlistUrl = 'https://api.spotify.com/v1/me/playlists';
 
-        // Prepare headers for the GET request
-        $headers = [
+        // Base URL for Spotify API
+        $base_url = 'https://api.spotify.com/v1/';
+
+        // Get user's Spotify ID
+        $profile_url = $base_url . 'me';
+
+        // Set up headers for the request
+        $headers = array(
             'Authorization: Bearer ' . $token,
-        ];
+        );
+        
+        // Make the GET request to retrieve user's profile
+        $profile_response = $this->make_get_request($profile_url, $headers);
+        
+        $profile_data = json_decode($profile_response, true);
 
-        // Create stream context for making the GET request
-        $context = stream_context_create([
-            'http' => [
-                'method' => 'GET',
-                'header' => implode("\r\n", $headers),
-            ],
-        ]);
-
-        // Make the GET request to retrieve user's playlists
-        $playlistResponse = file_get_contents($playlistUrl, false, $context);
-
-        // Handle the response
-        if ($playlistResponse === false) {
-            // Error handling
-            exit("Failed to retrieve user's playlists.");
+        // Check if the response contains the user ID
+        if (isset($profile_data['id'])) {
+            $user_id = $profile_data['id'];
+            echo 'User ID: ' . $user_id . '<br>';
+        } else {
+            echo 'Error: User ID not found in response<br>';
         }
 
-        // Parse the JSON response
-        $playlists = json_decode($playlistResponse, true);
+        // URL to get user's playlists
+        $playlists_url = $base_url . 'users/' . $user_id . '/playlists';
 
-        // Output user's playlists
-        return $playlists;
+        // Set up headers for the request
+        $headers = array(
+            'Authorization: Bearer ' . $token,
+            'Content-Type: application/json',
+        );
 
+        // Make the GET request to retrieve playlists
+        $playlists_response = $this->make_get_request($playlists_url, $headers);
+
+        $playlists_data = json_decode($playlists_response, true);
+
+        // Encode the playlists data to JSON
+        $json_data = json_encode($playlists_data);
+
+        $file_path = "spotify_playlists.json";
+        file_put_contents($file_path, $json_data);
     }
 
 }

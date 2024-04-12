@@ -85,7 +85,7 @@ class DataController extends Controller{
         $saveToken = new Data();
         $saveToken->saveToken($accessToken, $username);
 
-        header('Location: /playlists');
+        header('Location: /success');
         exit();
 
         
@@ -97,13 +97,12 @@ class DataController extends Controller{
 
         $username = $_SESSION['username'];
         $userToken = $newData->getToken($username);
-
-        $userPlaylists = $newData->playlists($userToken);
-
-        echo "User's Playlists:\n";
-        foreach ($userPlaylists['items'] as $playlist) {
-            echo $playlist['name'] . "\n";
+        if (!empty($userToken) && isset($userToken[0]->token)) {
+            // Access the token property of the object in the array
+            $token = $userToken[0]->token;
+            $newData->playlists($token);
+        } else {
+            echo "Token not found";
         }
-
     }
 }

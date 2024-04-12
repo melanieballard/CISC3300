@@ -28,5 +28,9 @@ $routes = [
     'playlists' => [
         'controller' => DataController::class,
         'GET' => 'getPlaylists'
+    ],
+    'success' => [
+        'controller' => UserController::class,
+        'GET' => 'userShowData'
     ]
 ];
