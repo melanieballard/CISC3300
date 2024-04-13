@@ -21,6 +21,9 @@ class Router
         if (strpos($uri, '/callback') === 0) {
             $dataController = new DataController();
             $dataController->callback();
+        } else if(strpos($uri, '/reccomend') === 0){
+            $dataController = new DataController();
+            $dataController->getReccomendedSongs();
         }else{
             if ($uriParse[0]) {
             $route = $this->routeList[$uriParse[0]];
