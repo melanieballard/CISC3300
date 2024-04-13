@@ -88,7 +88,6 @@ class DataController extends Controller{
         header('Location: /success');
         exit();
 
-        
     }
 
     public function getPlaylists(){
@@ -104,5 +103,25 @@ class DataController extends Controller{
         } else {
             echo "Token not found";
         }
+    }
+
+
+    public function getReccomendedSongs(){
+
+        $newData = new Data();
+
+        $playlist_id = $_POST['playlistId'];
+
+        $username = $_SESSION['username'];
+        $userToken = $newData->getToken($username);
+        $token = $userToken[0]->token;
+
+        $reccomendations = $newData->reccomendations($playlist_id, $token);
+        
+        // Create a new playlist with recommended tracks
+        // You would need to implement the logic to add these tracks to a new playlist in your Spotify account.
+
+        $newPlaylist = $newData->createPlaylist($playlist_id, $reccomendations);
+
     }
 }
