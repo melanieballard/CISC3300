@@ -1,7 +1,7 @@
 $(document).ready(function() {
     $('#getPlaylistsBtn').click(function() {
         $.ajax({
-            url: '/playlists', // PHP endpoint to retrieve playlists
+            url: '/playlists', 
             type: 'GET',
             dataType: 'json',
             success: function(response) {
@@ -26,7 +26,6 @@ $(document).ready(function() {
 
 $(document).ready(function() {
     $('#playlistList').on('click', '.postPlaylist', function(event) {
-        // Prevent default link behavior
         event.preventDefault();
 
         var playlistName = $(this).text(); // Get playlist name from clicked link
@@ -42,7 +41,7 @@ $(document).ready(function() {
         // Make AJAX POST request
         $.ajax({
             type: 'POST',
-            url: '/reccomend', // Replace with the URL of your PHP script
+            url: '/reccomend', 
             data: { playlistId: playlistId },
             success: function(response) {
                 // Handle success response

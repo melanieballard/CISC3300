@@ -26,7 +26,7 @@ class DataController extends Controller{
 
         $clientId = $_ENV["CID"];
         $redirectUri = 'http://localhost:8888/callback';
-        $scopes = 'user-read-private user-read-email playlist-read-private'; // Add required scopes
+        $scopes = 'user-read-private user-read-email playlist-read-private playlist-modify-private playlist-modify-public'; // Add required scopes
         $state = bin2hex(random_bytes(16)); // Generate a unique state parameter
 
         $_SESSION['spotify_state'] = $state; // Store the state in session
@@ -117,11 +117,9 @@ class DataController extends Controller{
         $token = $userToken[0]->token;
 
         $reccomendations = $newData->reccomendations($playlist_id, $token);
-        
-        // Create a new playlist with recommended tracks
-        // You would need to implement the logic to add these tracks to a new playlist in your Spotify account.
 
-        $newPlaylist = $newData->createPlaylist($playlist_id, $reccomendations);
+        $newPlaylist = $newData->createPlaylist($playlist_id, $reccomendations, $token);
+        return $newPlaylist;
 
     }
 }

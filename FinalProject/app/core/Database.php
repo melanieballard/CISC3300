@@ -7,8 +7,8 @@ Trait Database
 
     private function connect()
     {
-        $string = "mysql:hostname=".DBHOST.";dbname=".DBNAME;
-        $con = new \PDO($string,DBUSER,DBPASS);
+        $dsn = "mysql:host=".DBHOST.";dbname=".DBNAME.";charset=utf8mb4";
+        $con = new \PDO($dsn, DBUSER, DBPASS);
         return $con;
     }
 
