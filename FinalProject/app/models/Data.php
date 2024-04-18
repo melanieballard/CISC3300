@@ -258,4 +258,10 @@ class Data{
 
     }
 
+    public function link(){
+
+        
+
+    }
+
 }

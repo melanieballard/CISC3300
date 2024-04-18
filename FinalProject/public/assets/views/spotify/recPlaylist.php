@@ -15,7 +15,7 @@
             <div id="trackList">
 
             </div>
-            
+            <a href='https://open.spotify.com'><button id = "openSpotify">View In Spotify</button></a>
         </div>
     </body>
 </html>

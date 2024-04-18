@@ -122,5 +122,4 @@ class DataController extends Controller{
         echo json_encode($newPlaylist);
         
     }
-
 }
