@@ -42,10 +42,12 @@ $(document).ready(function() {
         $.ajax({
             type: 'POST',
             url: '/reccomend', 
+            dataType: 'json',
             data: { playlistId: playlistId },
             success: function(response) {
                 // Handle success response
-                console.log('POST request successful:', response);
+                localStorage.setItem('newTracks', JSON.stringify(response));
+                window.location.href = '/newPlaylist';
             },
             error: function(xhr, status, error) {
                 // Handle error

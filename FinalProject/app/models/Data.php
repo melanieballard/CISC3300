@@ -232,6 +232,30 @@ class Data{
         $params = [':id' => $playlistId, ':name' => $newPlaylistName, ':owner' => $owner];
         $this->query($sql, $params);
         
+        $playlist_url = "https://api.spotify.com/v1/playlists/{$playlistId}/tracks";
+        $playlist_headers = [
+            'Authorization: Bearer ' . $token,
+        ];
+    
+        $playlist_data = $this->make_get_request($playlist_url, $playlist_headers);
+        $playlist = json_decode($playlist_data, true);
+
+        $newPlaylistInfo = [];
+        foreach($playlist['items'] as $item){
+            if (isset($item['track'])) {
+                $trackName = $item['track']['name'] ?? 'Unknown Track';
+                $artistName = isset($item['track']['artists'][0]['name']) ? $item['track']['artists'][0]['name'] : 'Unknown Artist';
+    
+                // Store the track and artist name
+                $newPlaylistInfo[] = [
+                    'track' => $trackName,
+                    'artist' => $artistName
+                ];
+            }
+        }
+
+        return $newPlaylistInfo;
+
     }
 
 }

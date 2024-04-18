@@ -116,8 +116,11 @@ class DataController extends Controller{
         $userToken = $newData->getToken($username);
         $token = $userToken[0]->token;
 
-        $reccomendations = $newData->reccomendations($playlist_id, $token);
+        $reccomendations = $newData->recommendations($playlist_id, $token);
 
-        $newData->createPlaylist($playlist_id, $reccomendations, $token);
+        $newPlaylist = $newData->createPlaylist($playlist_id, $reccomendations, $token);
+        echo json_encode($newPlaylist);
+        
     }
+
 }

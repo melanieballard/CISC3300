@@ -33,7 +33,7 @@ $routes = [
         'controller' => UserController::class,
         'GET' => 'userShowData'
     ],
-    'reccomended' => [
+    'newPlaylist' => [
         'controller' => UserController::class,
         'GET' => 'newPlaylist'
     ]
