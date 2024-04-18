@@ -113,7 +113,7 @@ class Data{
 
     }
 
-    public function recommendations($playlist_id, $token){
+    public function recommendations($playlist_id, $token) {
         $playlist_url = "https://api.spotify.com/v1/playlists/{$playlist_id}/tracks";
         $recommendations_url = 'https://api.spotify.com/v1/recommendations';
     
@@ -121,61 +121,59 @@ class Data{
             'Authorization: Bearer ' . $token,
         ];
     
-        // Fetch tracks from the playlist
         $playlist_data = $this->make_get_request($playlist_url, $playlist_headers);
         $playlist = json_decode($playlist_data, true);
     
         $recommended_tracks = [];
         if (isset($playlist['items']) && is_array($playlist['items'])) {
-            // Collect track IDs from the playlist
             $track_ids = [];
             foreach ($playlist['items'] as $item) {
                 $track_ids[] = $item['track']['id'];
+                if (count($track_ids) >= 5) { // Batch requests with up to 5 seed tracks
+                    $recommended_tracks = array_merge($recommended_tracks, $this->fetch_recommendations($track_ids, $token, $recommendations_url, $playlist_headers));
+                    $track_ids = []; // Reset the seed tracks array after each batch
+                }
             }
-    
-            // Group track IDs into batches
-            $batch_size = 5; // Example batch size, adjust as needed
-            $track_batches = array_chunk($track_ids, $batch_size);
-    
-            // Make batch requests for recommendations
-            foreach ($track_batches as $batch) {
-                // Construct batch request payload
-                $batch_requests = [];
-                foreach ($batch as $track_id) {
-                    $batch_requests[] = [
-                        'seed_tracks' => $track_id,
-                        'limit' => 1,
-                    ];
-                }
-    
-                // Make batch request to Spotify API
-                $batch_request_headers = [
-                    'Authorization: Bearer ' . $token,
-                    'Content-Type: application/json',
-                ];
-                $ch = curl_init($recommendations_url);
-                curl_setopt($ch, CURLOPT_POST, true);
-                curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode(['requests' => $batch_requests]));
-                curl_setopt($ch, CURLOPT_HTTPHEADER, $batch_request_headers);
-                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-                $batch_response = curl_exec($ch);
-                curl_close($ch);
-    
-                // Handle batch response
-                $batch_recommendations = json_decode($batch_response, true);
-                foreach ($batch_recommendations as $recommendation) {
-                    if (isset($recommendation['tracks'][0])) {
-                        $recommended_tracks[] = $recommendation['tracks'][0];
-                    } else {
-                        echo "No recommendations found for track ID: {$recommendation['seed_tracks'][0]}";
-                    }
-                }
+            if (!empty($track_ids)) { // Handle any remaining tracks
+                $recommended_tracks = array_merge($recommended_tracks, $this->fetch_recommendations($track_ids, $token, $recommendations_url, $playlist_headers));
             }
         } else {
-            echo "Items does not exist in the playlist data.";
+            echo "Items does not exist.";
         }
     
         return $recommended_tracks;
+    }
+    
+    private function fetch_recommendations($track_ids, $token, $recommendations_url, $playlist_headers) {
+        $recommendations_params = [
+            'seed_tracks' => implode(',', $track_ids),
+            'limit' => 5 // Adjust limit if necessary
+        ];
+    
+        $recommendations_query = http_build_query($recommendations_params);
+        $recommendations_url_with_params = $recommendations_url . '?' . $recommendations_query;
+    
+        $recommendations_options = [
+            CURLOPT_URL => $recommendations_url_with_params,
+            CURLOPT_HTTPHEADER => $playlist_headers,
+            CURLOPT_RETURNTRANSFER => true,
+        ];
+    
+        $recommendations_curl = curl_init();
+        curl_setopt_array($recommendations_curl, $recommendations_options);
+        $recommendations_response = curl_exec($recommendations_curl);
+        curl_close($recommendations_curl);
+        
+        $recommendations_data = json_decode($recommendations_response, true);
+        $fetched_tracks = [];
+        if (isset($recommendations_data['tracks']) && is_array($recommendations_data['tracks'])) {
+            foreach ($recommendations_data['tracks'] as $track) {
+                $fetched_tracks[] = $track;
+            }
+        } else {
+            echo "Tracks do not exist.";
+        }
+        return $fetched_tracks;
     }
 
     public function createPlaylist($givenPlaylist, $tracks, $token){
@@ -234,8 +232,6 @@ class Data{
         $params = [':id' => $playlistId, ':name' => $newPlaylistName, ':owner' => $owner];
         $this->query($sql, $params);
         
-        exit();
-
     }
 
 }
