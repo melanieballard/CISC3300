@@ -1,78 +1,94 @@
-@font-face {
-    font-family: "Baloo 2", sans-serif;
-    src: url("Baloo2-Medium.ttf");
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Baloo 2', sans-serif;
+    background-color: black;
+    color: #c8a3eb;
 }
 
-body {
-    height: 100vh;
-    margin: 0; 
-    font: "Baloo 2", "sans-serif";
-}
 
 .container-fluid {
-    text-align: center;
     background-color: black;
-}
-
-.container {
-    align-items: center;
-    margin-top: 25vh;
+    padding: 0;
 }
 
 .center {
-    background-color: rgb(150, 136, 161);
-    border-radius: 10%;
-    margin-left: 200px;
-    margin-right: 200px;
+    width: 100%;
+    padding: 20px;
+    background-color: #333; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5); 
+    border-radius: 8px;
 }
 
-#header {
-    color: rgb(150, 136, 161);
-    font-size: large;
-    background-color: rgb(58, 56, 58);
+form#usernameForm {
+    max-width: 400px; 
+    margin: auto; 
+    display: flex;
+    flex-direction: column; 
+    gap: 10px; 
+    background-color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    width: fit-content;
 }
 
-#header h4{
-    font-size: medium;
-}
-
-#content {
-    color: rgb(162, 151, 171);
-    font-size: medium;
-}
-
-a#go{
-    font-size: 12px;
-    color:rgb(183, 166, 196);
-    text-decoration: none;
-}
-
-a:hover{
-    color:rgb(103, 95, 110);
-    font-weight: bold;
-    text-decoration: underline;
+input[type="text"] {
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    background-color: #222; 
+    color: white; 
 }
 
 button {
-    color:rgb(150, 136, 161);
-    background-color: rgb(62, 60, 63);
-    border-radius: 30%;
-    border-color: rgb(137, 126, 146);
+    background-color: #c8a3eb; 
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer; 
 }
 
-p {
-    font-size: 30px;
-    font-weight: bolder;
-    color:rgb(137, 126, 146);
+button:hover {
+    background-color: #997db4; 
 }
 
+label {
+    color: #ccc; 
+}
 
-.box {
-    background-color: rgb(62, 60, 63);
-    border-radius: 10px;
-    border-color: rgb(150, 136, 161);
-    padding: 10px;
-    margin-top: 15px;
-    margin-bottom: 25px;
-    justify-content: center;
+#playlistList {
+    padding: 0; 
+    margin: 0 auto; 
+}
+
+a{
+    text-decoration: none;
+    color: #c8a3eb;
+}
+
+ul {
+    text-align: center; 
+    padding-left: 0; 
+}
+
+li {
+    margin-top: 10px; 
+    color: #c8a3eb;
+    text-decoration: none;
+    list-style-type: none; 
+}
+
+#trackList {
+    color: #c8a3eb; /* Light gray for readability */
+    padding: 20px;
+    background-color: #333; /* Slightly lighter background for the tracklist area */
+    border-radius: 8px;
+    min-width: 300px; /* Ensure the div doesn't collapse */
+}
+
+#playlistList li:hover {
+    color: #997db4; 
 }
