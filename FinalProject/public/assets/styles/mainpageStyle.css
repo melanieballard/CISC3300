@@ -61,7 +61,13 @@ label {
 
 #playlistList {
     padding: 0; 
-    margin: 0 auto; 
+    margin: 15px 0 0 0; 
+    max-height: 400px; 
+    overflow-y: scroll; 
+    background-color: #333; 
+    border-radius: 8px; 
+    width: 100%; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5); 
 }
 
 a{
@@ -82,11 +88,11 @@ li {
 }
 
 #trackList {
-    color: #c8a3eb; /* Light gray for readability */
+    color: #c8a3eb; 
     padding: 20px;
-    background-color: #333; /* Slightly lighter background for the tracklist area */
+    background-color: #333; 
     border-radius: 8px;
-    min-width: 300px; /* Ensure the div doesn't collapse */
+    min-width: 300px; 
 }
 
 #playlistList li:hover {
