@@ -118,8 +118,6 @@ class DataController extends Controller{
 
         $reccomendations = $newData->reccomendations($playlist_id, $token);
 
-        $newPlaylist = $newData->createPlaylist($playlist_id, $reccomendations, $token);
-        return $newPlaylist;
-
+        $newData->createPlaylist($playlist_id, $reccomendations, $token);
     }
 }

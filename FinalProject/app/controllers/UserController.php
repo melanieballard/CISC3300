@@ -26,4 +26,7 @@ class UserController extends Controller
         include '../public/assets/views/spotify/showPlaylists.php';
     }
 
+    public function newPlaylist(){
+        include '../public/assets/views/spotify/recPlaylist.php';
+    }
 }

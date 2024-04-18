@@ -32,5 +32,9 @@ $routes = [
     'success' => [
         'controller' => UserController::class,
         'GET' => 'userShowData'
+    ],
+    'reccomended' => [
+        'controller' => UserController::class,
+        'GET' => 'newPlaylist'
     ]
 ];
