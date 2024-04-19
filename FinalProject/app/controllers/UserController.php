@@ -6,27 +6,15 @@ use app\models\User;
 
 class UserController extends Controller
 {
-    public function getUsers()
-    {
-        $userModel = new User();
-        header("Content-Type: application/json");
-        $users = $userModel->getAllUsers();
-        echo json_encode($users);
-        exit();
-    }
-
-    public function saveUser() {
-    }
-
     public function logInUser() {
-        include '../public/assets/views/spotify/userInfo.php';
+        include '../public/assets/views/spotify/userInfo.php'; //show user login page
     }
 
     public function userShowData(){
-        include '../public/assets/views/spotify/showPlaylists.php';
+        include '../public/assets/views/spotify/showPlaylists.php'; //show user playlists
     }
 
     public function newPlaylist(){
-        include '../public/assets/views/spotify/recPlaylist.php';
+        include '../public/assets/views/spotify/recPlaylist.php'; //show reccomended playlist
     }
 }

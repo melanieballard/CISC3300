@@ -4,36 +4,27 @@ use app\controllers\UserController;
 use app\controllers\DataController;
 
 $routes = [
-    'users' => [
-        'controller' => UserController::class,
-        'GET' => 'getUsers',
-        'POST' => 'saveUser'
-    ],
-    'view-users' => [
-        'controller' => UserController::class,
-        'GET' => 'getUsers',
-    ],
-    'spotify' => [
+    'spotify' => [ //show login page
         'controller' => UserController::class,
         'GET' => 'logInUser',
     ],
-    'postUsername' => [
+    'postUsername' => [ //handle username
         'controller' => DataController::class,
         'POST' => 'handleUsername'
     ],
-    'login' => [
+    'login' => [ //login user
         'controller' => DataController::class,
         'GET' => 'login',
     ],
-    'playlists' => [
+    'playlists' => [ //get user playlists
         'controller' => DataController::class,
         'GET' => 'getPlaylists'
     ],
-    'success' => [
+    'success' => [ //show user playlists
         'controller' => UserController::class,
         'GET' => 'userShowData'
     ],
-    'newPlaylist' => [
+    'newPlaylist' => [ //show new playlist
         'controller' => UserController::class,
         'GET' => 'newPlaylist'
     ]

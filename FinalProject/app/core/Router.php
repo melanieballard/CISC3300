@@ -18,10 +18,10 @@ class Router
         $uriParse = explode('/', trim($_SERVER['REQUEST_URI'], '/'));
         $method =  $_SERVER['REQUEST_METHOD'];
 
-        if (strpos($uri, '/callback') === 0) {
+        if (strpos($uri, '/callback') === 0) { //uri route with params for callback after login
             $dataController = new DataController();
             $dataController->callback();
-        } else if(strpos($uri, '/reccomend') === 0){
+        } else if(strpos($uri, '/reccomend') === 0){ //uri route with params for reccomended songs api call
             $dataController = new DataController();
             $dataController->getReccomendedSongs();
         }else{

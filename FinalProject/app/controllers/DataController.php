@@ -14,7 +14,7 @@ class DataController extends Controller{
 
         if(isset($_POST['username'])){
             $username = $_POST['username'];
-            $_SESSION["username"] = $username;
+            $_SESSION["username"] = $username; // handle submitted username for sql purposes
         }else{
             echo 'Error: Username not submitted';
             exit();
@@ -26,10 +26,10 @@ class DataController extends Controller{
 
         $clientId = $_ENV["CID"];
         $redirectUri = 'http://localhost:8888/callback';
-        $scopes = 'user-read-private user-read-email playlist-read-private playlist-modify-private playlist-modify-public'; // Add required scopes
-        $state = bin2hex(random_bytes(16)); // Generate a unique state parameter
+        $scopes = 'user-read-private user-read-email playlist-read-private playlist-modify-private playlist-modify-public'; // add scopes for access
+        $state = bin2hex(random_bytes(16)); // unique state paramater for request
 
-        $_SESSION['spotify_state'] = $state; // Store the state in session
+        $_SESSION['spotify_state'] = $state; // store state in session
         
         $authorizeUrl = 'https://accounts.spotify.com/authorize?' . http_build_query([
             'client_id' => $clientId,
@@ -39,7 +39,7 @@ class DataController extends Controller{
             'state' => $state
         ]);
 
-        header('Location: ' . $authorizeUrl);
+        header('Location: ' . $authorizeUrl); //redirect to login page
         exit();
 
     }
@@ -53,12 +53,12 @@ class DataController extends Controller{
         $code = $_GET['code'];
         $state = $_GET['state'];
 
-        if (!isset($_SESSION['spotify_state']) || $_SESSION['spotify_state'] !== $state) {
+        if (!isset($_SESSION['spotify_state']) || $_SESSION['spotify_state'] !== $state) { //check if valid state 
             echo "Invalid state parameter";
             exit();
         }
 
-        // Exchange authorization code for access token
+        // exchange authorization code for access token
         $tokenUrl = 'https://accounts.spotify.com/api/token';
         $postData = http_build_query([
           'grant_type' => 'authorization_code',
@@ -83,7 +83,7 @@ class DataController extends Controller{
         $username = $_SESSION['username'];
 
         $saveToken = new Data();
-        $saveToken->saveToken($accessToken, $username);
+        $saveToken->saveToken($accessToken, $username); //save token to database
 
         header('Location: /success');
         exit();
@@ -94,12 +94,11 @@ class DataController extends Controller{
 
         $newData = new Data();
 
-        $username = $_SESSION['username'];
-        $userToken = $newData->getToken($username);
+        $username = $_SESSION['username']; //retrieve username from session
+        $userToken = $newData->getToken($username); //get token based on username 
         if (!empty($userToken) && isset($userToken[0]->token)) {
-            // Access the token property of the object in the array
             $token = $userToken[0]->token;
-            $newData->playlists($token);
+            $newData->playlists($token); //get playlists
         } else {
             echo "Token not found";
         }
@@ -110,15 +109,15 @@ class DataController extends Controller{
 
         $newData = new Data();
 
-        $playlist_id = $_POST['playlistId'];
+        $playlist_id = $_POST['playlistId']; //get playlist from post request
 
         $username = $_SESSION['username'];
         $userToken = $newData->getToken($username);
         $token = $userToken[0]->token;
 
-        $reccomendations = $newData->recommendations($playlist_id, $token);
+        $reccomendations = $newData->recommendations($playlist_id, $token); //generate reccomended songs and return array
 
-        $newPlaylist = $newData->createPlaylist($playlist_id, $reccomendations, $token);
+        $newPlaylist = $newData->createPlaylist($playlist_id, $reccomendations, $token); //insert reccomended songs into new playlist
         echo json_encode($newPlaylist);
         
     }
