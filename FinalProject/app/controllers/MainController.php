@@ -9,7 +9,7 @@ class MainController extends Controller
 
     public function homepage()
     {
-        include '../public/assets/views/main/homepage.php'; //homepage view
+        include '../public/assets/views/main/mainpage.php'; //homepage view
     }
 
     public function notFound()
