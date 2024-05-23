@@ -4,9 +4,13 @@ use app\controllers\UserController;
 use app\controllers\DataController;
 
 $routes = [
+    'playlist-generator' => [
+        'controller' => UserController::class,
+        'GET' => 'spotifyMainpage'
+    ],
     'spotify' => [ //show login page
         'controller' => UserController::class,
-        'GET' => 'logInUser',
+        'GET' => 'logInUser'
     ],
     'postUsername' => [ //handle username
         'controller' => DataController::class,
@@ -14,7 +18,7 @@ $routes = [
     ],
     'login' => [ //login user
         'controller' => DataController::class,
-        'GET' => 'login',
+        'GET' => 'login'
     ],
     'playlists' => [ //get user playlists
         'controller' => DataController::class,

@@ -6,6 +6,10 @@ use app\models\User;
 
 class UserController extends Controller
 {
+
+    public function spotifyMainpage(){
+        include '../public/assets/views/spotify/homepage.php'; //show user login page
+    }
     public function logInUser() {
         include '../public/assets/views/spotify/userInfo.php'; //show user login page
     }
