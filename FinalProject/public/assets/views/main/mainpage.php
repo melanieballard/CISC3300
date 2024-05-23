@@ -6,7 +6,7 @@
         <link rel="stylesheet" type = "text/css" href="assets/styles/homepageStyle.css"> 
         <title>Melanie Ballard</title>
     </head>
-    <body class = "container-fluid h-100 d-flex justify-content-start align-items-start">
+    <body class = "container-fluid h-100 d-flex justify-content-start align-items-start p-0">
         <nav class = "navbar w-100 sticky-top navbar-expand-md navbar-dark bg-dark">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
