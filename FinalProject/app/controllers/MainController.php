@@ -17,4 +17,9 @@ class MainController extends Controller
         include '../public/assets/views/main/notFound.php'; //not found view
     }
 
+    public function navbar()
+    {
+        include '../public/assets/views/main/navbar.php'; //navbar header
+    }
+
 }

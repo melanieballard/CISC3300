@@ -2,6 +2,7 @@
 
 use app\controllers\UserController;
 use app\controllers\DataController;
+use app\controllers\MainController;
 
 $routes = [
     'playlist-generator' => [
@@ -31,5 +32,9 @@ $routes = [
     'newPlaylist' => [ //show new playlist
         'controller' => UserController::class,
         'GET' => 'newPlaylist'
-    ]
+    ],
+    'navbar' => [ //fetch nav bar
+        'controller' => MainController::class,
+        'GET' => 'navbar'
+        ]
 ];

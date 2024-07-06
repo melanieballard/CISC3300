@@ -11,53 +11,46 @@
         <script src="assets/js/mainpage.js"></script>
         <title>Melanie Ballard</title>
     </head>
-    <body class = "container-fluid h-100 d-flex flex-column p-0">
-        <div class = "d-flex">
-            <nav class="navbar w-100 sticky-top navbar-expand-lg navbar-light px-3" style="background-color: #d9c0f0;">   
-                <div class="container-fluid px-1">
-                    <a class="navbar-brand m-0" href="#">Melanie Ballard</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse justify-content-end" id="navbarText">
-                        <ul class="navbar-nav">
-                            <li class="nav-item px-1">
-                                <a class="nav-link" href="#">Resume</a>
-                            </li>
-                            <li class="nav-item px-1">
-                                <a class="nav-link" href="#">About Me</a>
-                            </li>
-                            <li class="nav-item px-1">
-                                <a class="nav-link" href="/playlist-generator">Spotify Playlist Generator</a>
-                            </li>
-                            <li class="nav-item px-1">
-                                <a class="nav-link" href="https://www.depop.com/melb2123/">Depop</a>
-                            </li>
-                            <li class="nav-item px-1">
-                                <a class="nav-link" href="#">Contact Me</a>
-                            </li>
-                        </ul>
-                        <span class="navbar-text">
-                            <a href="https://github.com/melanieballard"><img src="assets/styles/images/github.png" width="40" height="30" alt="Github Link" class="px-1"></a>
-                            <a href="www.linkedin.com/in/melanieballard"><img src="assets/styles/images/linkedin.png" width="40" height="30" alt="Linkedin Link" class = "px-1"></a>
+
+    <body class="container-fluid h-100 d-flex flex-column p-0">
+        <header id="headerContainer"></header>
+
+        <div class="container-fluid mt-5 mb-2">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-6 d-flex align-items-center">
+                    <div class="d-flex flex-column align-items-center align-items-md-start">
+                        <h1 class="text-center text-md-start">Hello!</h1>
+                        <p class="text-center text-md-start">My name is Melanie and I am an aspiring Software Engineer 
+                            studying Computer Science and English at Fordham University. This website is a one-stop spot 
+                            for all of my personal projects as well as some other fun facts about me! Feel free to use the 
+                            Contact Me page to send me an email with any questions.
+                        </p>
+                        <span>
+                            <a href="/resume" class="btn btn-outline-primary" role="button" aria-pressed="true" id="resume">My Resume</a>
+                            <a href="/contact" class="btn btn-outline-primary" role="button" aria-pressed="true" id="contactMe">Contact Me</a>
                         </span>
                     </div>
                 </div>
-            </nav>
+                <div class="col-12 col-md-4 d-flex justify-content-center">
+                    <img src="assets/styles/images/me.jpeg" class="img-fluid" alt="Me!" style="max-width: 100%; height: auto;">
+                </div>
+            </div>
         </div>
 
-        <div class="container-fluid d-flex col-9 mt-5 mb-2 pt-5 justify-content-center">
-            <h1 class="text-center">Hello!</h1>
-        </div>
-        <div class="container-fluid d-flex col-9 col-md-5 m-auto justify-content-center">         
-            <p class="text-center">My name is Melanie and I am an aspiring Software Engineer studying Computer Science and English 
-                at Fordham University. This website is a one-stop spot for all of my personal projects as well as some 
-                other fun facts about me! Feel free to use the Contact Me page to send me an email with any questions. 
-            </p>
-        </div>
-
-        <div class="container-fluid d-flex col-9 mt-5 justify-content-center">
-            <img src="assets/styles/images/me.jpeg" width="300" height="403" alt="Me!">
-        </div>
     </body>
 </html>
+
+<script>
+        fetch('/navbar')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('headerContainer').innerHTML = data;
+            });
+
+        /*fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footerContainer').innerHTML = data;
+            });
+            */
+</script>

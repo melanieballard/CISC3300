@@ -7,3 +7,16 @@ html, body {
 h1 {
     font-size: 100px;
 }
+
+.btn-outline-primary{
+    background-color: #000000;
+    border-color: #d9c0f0;
+    color: #d9c0f0;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus {
+    background-color: #d9c0f0;
+    border-color: #d9c0f0;
+    color: #000000;
+}
