@@ -36,5 +36,17 @@ $routes = [
     'navbar' => [ //fetch nav bar
         'controller' => MainController::class,
         'GET' => 'navbar'
-        ]
+    ],
+    'about-me' => [
+        'controller' => MainController::class,
+        'GET' => 'aboutMe'
+    ],
+    'resume' => [
+        'controller' => MainController::class,
+        'GET' => 'resume'
+    ],
+    'contact-me' => [
+        'controller' => MainController::class,
+        'GET' => 'contactMe'
+    ],
 ];

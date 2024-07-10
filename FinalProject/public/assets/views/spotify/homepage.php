@@ -2,23 +2,35 @@
 <html lang = "en">
     <head>
         <meta charset="UTF-8">
+
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" type = "text/css" href="assets/styles/mainpageStyle.css">
+        <link rel="stylesheet" href="https://unpkg.com/tippy.js@6.3.1/dist/tippy.css">
+        <link rel="stylesheet" type = "text/css" href="assets/styles/homepageStyle.css">
+
+        <script src="https://unpkg.com/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+        <script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.min.js"></script>
+        <script src="/assets/js/navbar.js"></script>
+        <script src="/assets/js/tooltip.js"></script>
+
         <title>Playlist Generator</title>
+
     </head>
-    <body class = "container-fluid h-100 d-flex justify-content-center align-items-center p-0">
-        <div class = "center w-100">
-            <div class = "center">
-                <div class = "row justify-content-center">
-                    <div id = "header" class = "col-md-8 text-center mt-4 box">
-                        <h1>Playlist Generator</h1>
-                        <h4>Use Your Spotify Data to Generate Reccomended Songs</h4>
-                    </div>
+    <body class="container-fluid h-100 d-flex flex-column p-0">
+
+        <header id="headerContainer"></header>
+
+        <div class="container-fluid mt-5 mb-2">
+            <div class="row justify-content-center">
+                <div id="header" class = "col-md-8 text-center mt-5 box">
+                    <h1>Playlist Generator</h1>
+                    <h4>Use Your Spotify Data to Generate Reccomended Songs</h4>
+                    <p>Click the play button below to begin!</p>
                 </div>
-                <div class = "row justify-content-center mt-2">
-                    <div id = "content" class = "col-md-8 text-center mt-2 box">
-                        <a id = "go" href = "/spotify"><button id="go">Click Here</button></a>
-                    </div>
+            </div>
+                <div class="row justify-content-center mt-1">
+                    <div class="d-flex justify-content-center col-2 col-md-1">
+                        <img src="assets/styles/images/play.png" class="img-fluid" alt="Play button" id="startGen" style="max-width: 100%; height: auto;">
+                    </div>  
                 </div>
             </div>
         </div>

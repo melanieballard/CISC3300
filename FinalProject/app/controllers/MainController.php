@@ -22,4 +22,19 @@ class MainController extends Controller
         include '../public/assets/views/main/navbar.php'; //navbar header
     }
 
+    public function aboutMe()
+    {
+        include '../public/assets/views/aboutMe/aboutMe.php'; //navbar header
+    }
+    public function contactMe()
+    {
+        include '../public/assets/views/aboutMe/contactMe.php'; //navbar header
+    }
+
+    public function resume()
+    {
+        include '../public/assets/views/aboutMe/resume.php'; //navbar header
+    }
+
+
 }

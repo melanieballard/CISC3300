@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" type = "text/css" href="assets/styles/homepageStyle.css"> 
+        <script src="/assets/js/navbar.js"></script>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
@@ -16,7 +17,7 @@
         <header id="headerContainer"></header>
 
         <div class="container-fluid mt-5 mb-2">
-            <div class="row justify-content-center">
+            <div class="row justify-content-center mt-5">
                 <div class="col-12 col-md-6 d-flex align-items-center">
                     <div class="d-flex flex-column align-items-center align-items-md-start">
                         <h1 class="text-center text-md-start">Hello!</h1>
@@ -26,13 +27,13 @@
                             Contact Me page to send me an email with any questions.
                         </p>
                         <span>
-                            <a href="/resume" class="btn btn-outline-primary" role="button" aria-pressed="true" id="resume">My Resume</a>
-                            <a href="/contact" class="btn btn-outline-primary" role="button" aria-pressed="true" id="contactMe">Contact Me</a>
+                            <a href="/resume" class="btn btn-primary" role="button" aria-pressed="true" id="resume">My Resume</a>
+                            <a href="/contact" class="btn btn-primary" role="button" aria-pressed="true" id="contactMe">Contact Me</a>
                         </span>
                     </div>
                 </div>
                 <div class="col-12 col-md-4 d-flex justify-content-center">
-                    <img src="assets/styles/images/me.jpeg" class="img-fluid" alt="Me!" style="max-width: 100%; height: auto;">
+                    <span style="font-size: 20em;">👩🏼‍💻</span>
                 </div>
             </div>
         </div>
@@ -40,17 +41,3 @@
     </body>
 </html>
 
-<script>
-        fetch('/navbar')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('headerContainer').innerHTML = data;
-            });
-
-        /*fetch('footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footerContainer').innerHTML = data;
-            });
-            */
-</script>
