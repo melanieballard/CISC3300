@@ -1,5 +1,17 @@
 $(document).ready(function() {
     $('#getPlaylistsBtn').click(function() { //get user playlists
+
+        var contentContainer = document.getElementById('replace');
+
+        var replacementContent = document.createElement('div');
+            replacementContent.id = 'replacementContent';
+            replacementContent.style.display = 'none'; // Hide by default
+            replacementContent.innerHTML = `
+                <h2>New Content</h2>
+                <p>This content replaces the original.</p>
+            `;
+
+
         $.ajax({
             url: '/playlists', 
             type: 'GET',
