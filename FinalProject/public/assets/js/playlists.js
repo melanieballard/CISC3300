@@ -1,17 +1,6 @@
 $(document).ready(function() {
     $('#getPlaylistsBtn').click(function() { //get user playlists
 
-        var contentContainer = document.getElementById('replace');
-
-        var replacementContent = document.createElement('div');
-            replacementContent.id = 'replacementContent';
-            replacementContent.style.display = 'none'; // Hide by default
-            replacementContent.innerHTML = `
-                <h2>New Content</h2>
-                <p>This content replaces the original.</p>
-            `;
-
-
         $.ajax({
             url: '/playlists', 
             type: 'GET',
@@ -35,6 +24,19 @@ $(document).ready(function() {
                 console.error('Error:', error);
             }
         });
+
+        var initialContent = document.getElementById('getPlaylistsBtn');
+        var contentContainer = document.getElementById('replace');
+
+        var replacementContent = document.createElement('p');
+            replacementContent.id = 'replacementContent';
+            replacementContent.style.display = 'none'; // Hide by default
+            replacementContent.textContent = `Select a playlist to generate a reccomended playlist based on that
+            playlist's contents`;
+
+        contentContainer.replaceChild(replacementContent, initialContent);
+        replacementContent.style.display = 'block';
+
     });
 });
 

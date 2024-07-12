@@ -22,18 +22,23 @@ class MainController extends Controller
         include '../public/assets/views/main/navbar.php'; //navbar header
     }
 
+    public function colorMode()
+    {
+        include '../public/assets/views/main/colorMode.php'; //light and dark mode
+    }
+
     public function aboutMe()
     {
-        include '../public/assets/views/aboutMe/aboutMe.php'; //navbar header
+        include '../public/assets/views/aboutMe/aboutMe.php'; //about me page
     }
     public function contactMe()
     {
-        include '../public/assets/views/aboutMe/contactMe.php'; //navbar header
+        include '../public/assets/views/aboutMe/contactMe.php'; //contact form page
     }
 
     public function resume()
     {
-        include '../public/assets/views/aboutMe/resume.php'; //navbar header
+        include '../public/assets/views/aboutMe/resume.php'; //resume page
     }
 
 

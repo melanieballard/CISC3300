@@ -37,7 +37,11 @@ $routes = [
         'controller' => MainController::class,
         'GET' => 'navbar'
     ],
-    'about-me' => [
+    'colorMode' => [
+        'controller' => MainController::class,
+        'GET' => 'colorMode'
+    ],
+    'about' => [
         'controller' => MainController::class,
         'GET' => 'aboutMe'
     ],
@@ -45,7 +49,7 @@ $routes = [
         'controller' => MainController::class,
         'GET' => 'resume'
     ],
-    'contact-me' => [
+    'contact' => [
         'controller' => MainController::class,
         'GET' => 'contactMe'
     ],

@@ -1,6 +1,10 @@
 html, body {
     font-family: 'Baloo 2', sans-serif;
-    background-color: #e3f2fd;
+    background-color: #e5f5ff;
+}
+
+.navbar {
+    background-color: #d0e6f5;
 }
 
 h1 {
@@ -10,6 +14,12 @@ h1 {
 p {
     font-size: large;
 }
+
+#colorToggle {
+    background: none;
+    border: none;
+}
+
 
 #playlistList {
     padding: 0; 
@@ -23,4 +33,12 @@ p {
 }
 #playlistList a{
     text-decoration: none;
+}
+
+
+#trackList {
+    padding: 20px;
+    background-color: #d0e6f5; 
+    border-radius: 8px;
+    min-width: 300px; 
 }

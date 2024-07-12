@@ -1,0 +1,47 @@
+html, body {
+    font-family: 'Baloo 2', sans-serif;
+    background-color: #445a67;
+    color: white;
+}
+
+.navbar {
+    background-color: #7692a3;
+}
+
+h1 {
+    font-size: 100px;
+}
+
+p {
+    font-size: large;
+}
+
+
+#colorToggle {
+    background: none;
+    border: none;
+    color: white;
+}
+
+#playlistList {
+    color: white;
+    padding: 0; 
+    margin: 15px 0 0 0; 
+    max-height: 400px; 
+    overflow-y: scroll; 
+    background-color: #565f66; 
+    border-radius: 8px; 
+    width: 100%; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5); 
+}
+#playlistList a{
+    text-decoration: none;
+}
+
+
+#trackList {
+    padding: 20px;
+    background-color: #565f66; 
+    border-radius: 8px;
+    min-width: 300px; 
+}

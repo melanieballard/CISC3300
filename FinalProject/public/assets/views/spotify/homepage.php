@@ -4,13 +4,9 @@
         <meta charset="UTF-8">
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://unpkg.com/tippy.js@6.3.1/dist/tippy.css">
-        <link rel="stylesheet" type = "text/css" href="assets/styles/homepageStyle.css">
-
-        <script src="https://unpkg.com/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
-        <script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.min.js"></script>
-        <script src="/assets/js/navbar.js"></script>
-        <script src="/assets/js/tooltip.js"></script>
+        <link rel="stylesheet" type = "text/css" href="assets/styles/styleLight.css" id="colorTheme"> 
 
         <title>Playlist Generator</title>
 
@@ -34,5 +30,14 @@
                 </div>
             </div>
         </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://unpkg.com/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+        <script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+
+        <script src="/assets/js/navbar.js"></script>
+        <script src="/assets/js/tooltip.js"></script>
+
     </body>
 </html>
